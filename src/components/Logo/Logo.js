@@ -5,7 +5,7 @@ import './logo.css'
  const Logo = () => {
   return (
   	<div className="center">
-	  	<div>
+	  	<div className="ma1">
 		  	<Tilt className="Tilt" options={{ max : 55 }} style={{ height: 150, width: 150 }} >
 				<div className=' pa3 shadow-5 logo grow ba '>
 				    <div className='br-100'>
@@ -14,7 +14,7 @@ import './logo.css'
 				</div>
 			</Tilt>
 		</div>
-		<h1 className='f1 ma3 dark-blue'>Face Recognetion</h1>	
+		<h1 className='f1 ma3 dark-blue'>Face Recognition</h1>	
 	</div>
  	
   );	
