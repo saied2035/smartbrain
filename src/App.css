@@ -18,6 +18,6 @@ font-style: normal;
 font-weight: normal;
 src: local('Vampire Bite Solid Regular'), url('VampireBiteSolid-AL0wD.woff') format('woff');
 }
-h1 {
+h1,h2 {
 	font-family: 'Vampire Bite Solid Regular';
 }
