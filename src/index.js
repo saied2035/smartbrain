@@ -9,6 +9,7 @@ import './index.css';
 import App from './App';
 import 'tachyons'
 import * as serviceWorker from './serviceWorker';
+
    const rootRducer = combineReducers({getSearch,getImage,getBoxBorders})
    const logger=createLogger();
    export const store = createStore(rootRducer,applyMiddleware(thunkMiddleware,logger));

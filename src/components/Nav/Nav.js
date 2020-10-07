@@ -7,4 +7,5 @@ import React from 'react';
    </div>
   );	
  }
- export default Nav;
+ 
+export default Nav;
