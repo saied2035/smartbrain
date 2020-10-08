@@ -5,12 +5,13 @@ import {createStore,combineReducers,applyMiddleware} from 'redux';
 import {createLogger} from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import { getSearch,getImage,getBoxBorders} from './components/ImageLinkForm/effects/reducers';
+import {getRoute} from  './components/Register/effects/reducers';
 import './index.css';
 import App from './App';
 import 'tachyons'
 import * as serviceWorker from './serviceWorker';
 
-   const rootRducer = combineReducers({getSearch,getImage,getBoxBorders})
+   const rootRducer = combineReducers({getSearch,getImage,getBoxBorders,getRoute})
    const logger=createLogger();
    export const store = createStore(rootRducer,applyMiddleware(thunkMiddleware,logger));
    
