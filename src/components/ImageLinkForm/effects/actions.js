@@ -3,29 +3,37 @@ import {
            DETECTED,
            IMAGE_REQUEST_PENDING,
            IMAGE_REQUEST_SUCCESS,
-           IMAGE_REQUEST_FAILED
+           IMAGE_REQUEST_FAILED,
+           RESET
 } from './constants.js';
 
-import Clarifai from 'clarifai'
+
 
 // searchValue
-export const getSearchBar = (text="") => ({
-     type : TEXT,
-     payload : text
+export const getSearchBar = (target) =>  {
+  if(target===undefined) {
+    return {
+      type : RESET
+    }
   }
-)
+ return {
+     type : TEXT,
+     payload : target.value
+  }
+}
 
 // getImage and detect the face using Clarifai Api
-const app = new Clarifai.App({
-    apiKey: 'aa5f028272e1463088b19faa78ebb744'
-});
+
 export const getImageUrl = (text) => (request) => {
           request({type :IMAGE_REQUEST_PENDING, payload: true})
-             app.models
-            .predict(
-              Clarifai.FACE_DETECT_MODEL,
-              text      
-            )
+              fetch('http://localhost:3001/predict', {
+                method: 'post',
+                headers: {'content-type':'application/json'},
+                body: JSON.stringify({
+                    text:text
+                })
+             })
+            .then(response => response.json())
             .then(response => 
 
               request(

@@ -3,7 +3,8 @@ import {
 		   DETECTED,
 		   IMAGE_REQUEST_PENDING,
 		   IMAGE_REQUEST_SUCCESS,
-		   IMAGE_REQUEST_FAILED
+		   IMAGE_REQUEST_FAILED,
+		   RESET
 } from './constants.js';
 
 const initialSearchState = {
@@ -13,6 +14,8 @@ export const getSearch = (state=initialSearchState,action={}) => {
 	switch (action.type) {
 		case TEXT:
 		    return Object.assign({},state,{search:action.payload});
+		case RESET:
+		    return Object.assign({},state,{search:''});		    
 	    default :
 		    return state;
 	}
@@ -33,7 +36,9 @@ export const getImage = (state=initialImageState,action={}) => {
 		case IMAGE_REQUEST_SUCCESS :
 			return Object.assign({},state, {predict : action.payload ,image:action.image,isPending:false,error:false});
 		case IMAGE_REQUEST_FAILED :
-			return Object.assign({},state, {error : action.payload ,image:'',isPending:false,predict:{}});   
+			return Object.assign({},state, {error : action.payload ,image:'',isPending:false,predict:{}});
+		case RESET :
+			return initialImageState;   			   
 	    default :
 		    return state;
 	}
