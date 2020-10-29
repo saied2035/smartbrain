@@ -26,7 +26,7 @@ export const getSearchBar = (target) =>  {
 
 export const getImageUrl = (text) => (request) => {
           request({type :IMAGE_REQUEST_PENDING, payload: true})
-              fetch('http://localhost:3001/predict', {
+              fetch('https://peaceful-meadow-52241.herokuapp.com/predict', {
                 method: 'post',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({

@@ -107,7 +107,7 @@ export const setRoute = (text) => {
   export const compareUser = (email,password,name='') => (request) => {
               request({type: REQUEST_PENDING,payload: true})
                if(!name.length){
-              fetch('http://localhost:3001/signin', {
+              fetch('https://peaceful-meadow-52241.herokuapp.com/signin', {
                 method: 'post',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({
@@ -127,7 +127,7 @@ export const setRoute = (text) => {
              .catch(error => request({type:REQUEST_FAILED,payload: 'error'}))
          }
          else {
-              fetch('http://localhost:3001/register', {
+              fetch('https://peaceful-meadow-52241.herokuapp.com/register', {
                 method: 'post',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({
