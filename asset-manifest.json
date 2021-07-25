@@ -1,26 +1,24 @@
 {
   "files": {
-    "main.css": "/facerecognition/static/css/main.a1d76a77.chunk.css",
-    "main.js": "/facerecognition/static/js/main.45b14578.chunk.js",
-    "main.js.map": "/facerecognition/static/js/main.45b14578.chunk.js.map",
-    "runtime-main.js": "/facerecognition/static/js/runtime-main.c0267974.js",
-    "runtime-main.js.map": "/facerecognition/static/js/runtime-main.c0267974.js.map",
-    "static/css/2.3c03f26f.chunk.css": "/facerecognition/static/css/2.3c03f26f.chunk.css",
-    "static/js/2.66c53822.chunk.js": "/facerecognition/static/js/2.66c53822.chunk.js",
-    "static/js/2.66c53822.chunk.js.map": "/facerecognition/static/js/2.66c53822.chunk.js.map",
-    "index.html": "/facerecognition/index.html",
-    "precache-manifest.31b103fbd37ac90e8a7a9f7463433d50.js": "/facerecognition/precache-manifest.31b103fbd37ac90e8a7a9f7463433d50.js",
-    "service-worker.js": "/facerecognition/service-worker.js",
-    "static/css/2.3c03f26f.chunk.css.map": "/facerecognition/static/css/2.3c03f26f.chunk.css.map",
-    "static/css/main.a1d76a77.chunk.css.map": "/facerecognition/static/css/main.a1d76a77.chunk.css.map",
-    "static/js/2.66c53822.chunk.js.LICENSE.txt": "/facerecognition/static/js/2.66c53822.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/facerecognition/static/media/VampireBiteSolid-AL0wD.489fefce.woff"
+    "main.css": "/saied2035/facerecognition/static/css/main.ecc8e042.chunk.css",
+    "main.js": "/saied2035/facerecognition/static/js/main.979153cc.chunk.js",
+    "main.js.map": "/saied2035/facerecognition/static/js/main.979153cc.chunk.js.map",
+    "runtime-main.js": "/saied2035/facerecognition/static/js/runtime-main.4102aace.js",
+    "runtime-main.js.map": "/saied2035/facerecognition/static/js/runtime-main.4102aace.js.map",
+    "static/css/2.6d7c7915.chunk.css": "/saied2035/facerecognition/static/css/2.6d7c7915.chunk.css",
+    "static/js/2.df4a23f4.chunk.js": "/saied2035/facerecognition/static/js/2.df4a23f4.chunk.js",
+    "static/js/2.df4a23f4.chunk.js.map": "/saied2035/facerecognition/static/js/2.df4a23f4.chunk.js.map",
+    "index.html": "/saied2035/facerecognition/index.html",
+    "static/css/2.6d7c7915.chunk.css.map": "/saied2035/facerecognition/static/css/2.6d7c7915.chunk.css.map",
+    "static/css/main.ecc8e042.chunk.css.map": "/saied2035/facerecognition/static/css/main.ecc8e042.chunk.css.map",
+    "static/js/2.df4a23f4.chunk.js.LICENSE.txt": "/saied2035/facerecognition/static/js/2.df4a23f4.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/saied2035/facerecognition/static/media/VampireBiteSolid-AL0wD.175f0a1d.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.c0267974.js",
-    "static/css/2.3c03f26f.chunk.css",
-    "static/js/2.66c53822.chunk.js",
-    "static/css/main.a1d76a77.chunk.css",
-    "static/js/main.45b14578.chunk.js"
+    "static/js/runtime-main.4102aace.js",
+    "static/css/2.6d7c7915.chunk.css",
+    "static/js/2.df4a23f4.chunk.js",
+    "static/css/main.ecc8e042.chunk.css",
+    "static/js/main.979153cc.chunk.js"
   ]
 }
