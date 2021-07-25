@@ -59,7 +59,7 @@ class App extends  Component {
         <Nav onRouteChange={onRouteChange} onRegisterSubmit={onRegisterSubmit}
          onSignInSubmit={onSignInSubmit} onSearchChange={onSearchChange}
          getUserInformation={getUserInformation} route={route} />
-        }
+        
         { 
         route==='signIn'?
          <SignIn 
