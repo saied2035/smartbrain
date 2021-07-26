@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/saied2035/facerecognition/static/css/main.ecc8e042.chunk.css",
-    "main.js": "/saied2035/facerecognition/static/js/main.979153cc.chunk.js",
-    "main.js.map": "/saied2035/facerecognition/static/js/main.979153cc.chunk.js.map",
-    "runtime-main.js": "/saied2035/facerecognition/static/js/runtime-main.4102aace.js",
-    "runtime-main.js.map": "/saied2035/facerecognition/static/js/runtime-main.4102aace.js.map",
-    "static/css/2.6d7c7915.chunk.css": "/saied2035/facerecognition/static/css/2.6d7c7915.chunk.css",
-    "static/js/2.df4a23f4.chunk.js": "/saied2035/facerecognition/static/js/2.df4a23f4.chunk.js",
-    "static/js/2.df4a23f4.chunk.js.map": "/saied2035/facerecognition/static/js/2.df4a23f4.chunk.js.map",
-    "index.html": "/saied2035/facerecognition/index.html",
-    "static/css/2.6d7c7915.chunk.css.map": "/saied2035/facerecognition/static/css/2.6d7c7915.chunk.css.map",
-    "static/css/main.ecc8e042.chunk.css.map": "/saied2035/facerecognition/static/css/main.ecc8e042.chunk.css.map",
-    "static/js/2.df4a23f4.chunk.js.LICENSE.txt": "/saied2035/facerecognition/static/js/2.df4a23f4.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/saied2035/facerecognition/static/media/VampireBiteSolid-AL0wD.175f0a1d.woff"
+    "main.css": "/USERNAME/USERNAME.github.io/static/css/main.663555ab.chunk.css",
+    "main.js": "/USERNAME/USERNAME.github.io/static/js/main.db59e38d.chunk.js",
+    "main.js.map": "/USERNAME/USERNAME.github.io/static/js/main.db59e38d.chunk.js.map",
+    "runtime-main.js": "/USERNAME/USERNAME.github.io/static/js/runtime-main.d143fa49.js",
+    "runtime-main.js.map": "/USERNAME/USERNAME.github.io/static/js/runtime-main.d143fa49.js.map",
+    "static/css/2.6d7c7915.chunk.css": "/USERNAME/USERNAME.github.io/static/css/2.6d7c7915.chunk.css",
+    "static/js/2.df4a23f4.chunk.js": "/USERNAME/USERNAME.github.io/static/js/2.df4a23f4.chunk.js",
+    "static/js/2.df4a23f4.chunk.js.map": "/USERNAME/USERNAME.github.io/static/js/2.df4a23f4.chunk.js.map",
+    "index.html": "/USERNAME/USERNAME.github.io/index.html",
+    "static/css/2.6d7c7915.chunk.css.map": "/USERNAME/USERNAME.github.io/static/css/2.6d7c7915.chunk.css.map",
+    "static/css/main.663555ab.chunk.css.map": "/USERNAME/USERNAME.github.io/static/css/main.663555ab.chunk.css.map",
+    "static/js/2.df4a23f4.chunk.js.LICENSE.txt": "/USERNAME/USERNAME.github.io/static/js/2.df4a23f4.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/USERNAME/USERNAME.github.io/static/media/VampireBiteSolid-AL0wD.175f0a1d.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.4102aace.js",
+    "static/js/runtime-main.d143fa49.js",
     "static/css/2.6d7c7915.chunk.css",
     "static/js/2.df4a23f4.chunk.js",
-    "static/css/main.ecc8e042.chunk.css",
-    "static/js/main.979153cc.chunk.js"
+    "static/css/main.663555ab.chunk.css",
+    "static/js/main.db59e38d.chunk.js"
   ]
 }
