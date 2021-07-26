@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/USERNAME/USERNAME.github.io/static/css/main.663555ab.chunk.css",
-    "main.js": "/USERNAME/USERNAME.github.io/static/js/main.db59e38d.chunk.js",
-    "main.js.map": "/USERNAME/USERNAME.github.io/static/js/main.db59e38d.chunk.js.map",
-    "runtime-main.js": "/USERNAME/USERNAME.github.io/static/js/runtime-main.d143fa49.js",
-    "runtime-main.js.map": "/USERNAME/USERNAME.github.io/static/js/runtime-main.d143fa49.js.map",
-    "static/css/2.6d7c7915.chunk.css": "/USERNAME/USERNAME.github.io/static/css/2.6d7c7915.chunk.css",
-    "static/js/2.df4a23f4.chunk.js": "/USERNAME/USERNAME.github.io/static/js/2.df4a23f4.chunk.js",
-    "static/js/2.df4a23f4.chunk.js.map": "/USERNAME/USERNAME.github.io/static/js/2.df4a23f4.chunk.js.map",
-    "index.html": "/USERNAME/USERNAME.github.io/index.html",
-    "static/css/2.6d7c7915.chunk.css.map": "/USERNAME/USERNAME.github.io/static/css/2.6d7c7915.chunk.css.map",
-    "static/css/main.663555ab.chunk.css.map": "/USERNAME/USERNAME.github.io/static/css/main.663555ab.chunk.css.map",
-    "static/js/2.df4a23f4.chunk.js.LICENSE.txt": "/USERNAME/USERNAME.github.io/static/js/2.df4a23f4.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/USERNAME/USERNAME.github.io/static/media/VampireBiteSolid-AL0wD.175f0a1d.woff"
+    "main.css": "/facerecognition/static/css/main.60a9ec49.chunk.css",
+    "main.js": "/facerecognition/static/js/main.398f8eef.chunk.js",
+    "main.js.map": "/facerecognition/static/js/main.398f8eef.chunk.js.map",
+    "runtime-main.js": "/facerecognition/static/js/runtime-main.f7dbbb6f.js",
+    "runtime-main.js.map": "/facerecognition/static/js/runtime-main.f7dbbb6f.js.map",
+    "static/css/2.6d7c7915.chunk.css": "/facerecognition/static/css/2.6d7c7915.chunk.css",
+    "static/js/2.df4a23f4.chunk.js": "/facerecognition/static/js/2.df4a23f4.chunk.js",
+    "static/js/2.df4a23f4.chunk.js.map": "/facerecognition/static/js/2.df4a23f4.chunk.js.map",
+    "index.html": "/facerecognition/index.html",
+    "static/css/2.6d7c7915.chunk.css.map": "/facerecognition/static/css/2.6d7c7915.chunk.css.map",
+    "static/css/main.60a9ec49.chunk.css.map": "/facerecognition/static/css/main.60a9ec49.chunk.css.map",
+    "static/js/2.df4a23f4.chunk.js.LICENSE.txt": "/facerecognition/static/js/2.df4a23f4.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/facerecognition/static/media/VampireBiteSolid-AL0wD.175f0a1d.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.d143fa49.js",
+    "static/js/runtime-main.f7dbbb6f.js",
     "static/css/2.6d7c7915.chunk.css",
     "static/js/2.df4a23f4.chunk.js",
-    "static/css/main.663555ab.chunk.css",
-    "static/js/main.db59e38d.chunk.js"
+    "static/css/main.60a9ec49.chunk.css",
+    "static/js/main.398f8eef.chunk.js"
   ]
 }
