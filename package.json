@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^7.2.1",
     "clarifai": "^2.9.1",
     "gh-pages": "^3.2.3",
-    "npm": "^7.20.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
@@ -17,13 +16,12 @@
     "react-tilt": "^0.1.4",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "serve": "^11.3.2",
     "tachyons": "^4.12.0"
   },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
