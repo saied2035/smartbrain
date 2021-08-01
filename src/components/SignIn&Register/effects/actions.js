@@ -107,7 +107,7 @@ export const setRoute = (text) => {
   export const compareUser = (email,password,name='') => (request) => {
               request({type: REQUEST_PENDING,payload: true})
                if(!name.length){
-              fetch('https://protected-basin-05856.herokuapp.com/signin', {
+              fetch('https://smart-brain-api-nile.herokuapp.com/signin', {
                 method: 'post',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({
@@ -127,7 +127,7 @@ export const setRoute = (text) => {
              .catch(error => request({type:REQUEST_FAILED,payload: 'error'}))
          }
          else {
-              fetch('https://protected-basin-05856.herokuapp.com/register', {
+              fetch('https://smart-brain-api-nile.herokuapp.com/register', {
                 method: 'post',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({
