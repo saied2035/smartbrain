@@ -41,7 +41,7 @@ import './css/SignIn.css'
                 <div className="mt3"> 
                 {
                   failed =='error'? 
-                        <p> error logging in</p>
+                       "error logging in"
                     
                 }
                  <div className='center flex-wrap lh-solid'>
@@ -52,6 +52,7 @@ import './css/SignIn.css'
                     }} 
                     className="b dib dim pointer ba pa2 tc shadow-2 f4 bg-light-green ba">Register</p>
                   </div>
+
                 </div>
                 </div>
             </article>
