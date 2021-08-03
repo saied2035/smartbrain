@@ -63,8 +63,7 @@ class App extends  Component {
         { 
         route==='signIn'?
          <SignIn 
-         success={successServer} 
-         failed= {failed}  
+         success={successServer}
          onInsertUser={onInsertUser} 
          email={signInEmail} 
          password={signInPassword} 
