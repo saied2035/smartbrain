@@ -11,7 +11,7 @@ import './css/SignIn.css'
         }
 }
     render () {
-      const {onSignInSubmit,onRouteChange,email,password,onInsertUser,failed} = this.props
+      const {onSignInSubmit,onRouteChange,email,password,onInsertUser,failedServer} = this.props
     return (
           <main className="center background shadow-5 pa2 black-80" style={{width:'30vw',height:'auto'}} >
             <article className="mw5 center br3 pa2-ns mv3">
