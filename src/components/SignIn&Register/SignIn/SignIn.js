@@ -40,7 +40,7 @@ import './css/SignIn.css'
                   </div>
                 <div className="mt3">
                   
-                  <p>{failed}</p>
+                  <p className='center tc'>{failed}</p>
                     
                  <div className='center flex-wrap lh-solid'>
                     <p className="f4 ma0">don't have an account?</p>
