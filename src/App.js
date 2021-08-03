@@ -26,7 +26,7 @@ const state = (state) => {
     signInPassword : state.getSignIn.password,
     isPendingServer : state.compareUserResults.isPending,
     successServer : state.compareUserResults.success,
-    failed : state.compareUserResults.failed,
+    failedServer : state.compareUserResults.failed,
     registerEmail : state.signNewUser.email,
     registerPassword : state.signNewUser.password,
     registerName : state.signNewUser.name,
@@ -63,7 +63,8 @@ class App extends  Component {
         { 
         route==='signIn'?
          <SignIn 
-         success={successServer}
+         success={successServer} 
+         failed ={failedServer}
          onInsertUser={onInsertUser} 
          email={signInEmail} 
          password={signInPassword} 
