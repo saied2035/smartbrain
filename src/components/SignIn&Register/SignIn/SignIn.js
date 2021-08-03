@@ -40,7 +40,7 @@ import './css/SignIn.css'
                   </div>
                 <div className="mt3">                    
                  <div className='center flex-wrap lh-solid'>
-                    <p className='center tc'>{failed}</p>
+                    <p className='f4'>{failed}</p>
                     <p className="f4 ma0">don't have an account?</p>
                     <p onClick={() => {
                       onSignInSubmit('reset')
