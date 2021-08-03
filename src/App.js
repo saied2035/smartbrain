@@ -51,7 +51,7 @@ class App extends  Component {
 
   render () {
       const {onSearchChange,onButtonClick,imageUrl,error,onLoadImage,box,route,onRouteChange,onSignInSubmit} = this.props;
-      const {onInsertUser,signInEmail,signInPassword,successServer} = this.props;
+      const {onInsertUser,signInEmail,signInPassword,successServer,failedServer} = this.props;
       const {onRegisterSubmit,registerEmail,registerPassword,registerName} = this.props;
       const {requestUser,getUserInformation} = this.props;
       return(
