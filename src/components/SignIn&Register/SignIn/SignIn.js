@@ -38,11 +38,9 @@ import './css/SignIn.css'
                   grow pointer f3 hover-bg-black hover-light-green" 
                   type="submit" value="Sign in" />
                   </div>
-                <div className="mt3">
-                  
-                  <p className='center tc'>{failed}</p>
-                    
+                <div className="mt3">                    
                  <div className='center flex-wrap lh-solid'>
+                    <p className='center tc'>{failed}</p>
                     <p className="f4 ma0">don't have an account?</p>
                     <p onClick={() => {
                       onSignInSubmit('reset')
