@@ -40,7 +40,7 @@ import './css/SignIn.css'
                   </div>
                 <div className="mt3">
                  {
-                   failed == 'error' ?(<p>{error login,please try again}</p>)
+                   failed == 'error' ?(<p>{'error login,please try again'}</p>)
                  } 
                  <div className='center flex-wrap lh-solid'>
                     <p className="f4 ma0">don't have an account?</p>
