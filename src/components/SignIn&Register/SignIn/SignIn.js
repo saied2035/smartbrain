@@ -39,11 +39,7 @@ import './css/SignIn.css'
                   type="submit" value="Sign in" />
                   </div>
                 <div className="mt3"> 
-                {
-                  failed =='error'? 
-                       "error logging in"
-                    
-                }
+                   <p>{failed}</p>
                  <div className='center flex-wrap lh-solid'>
                     <p className="f4 ma0">don't have an account?</p>
                     <p onClick={() => {
@@ -52,7 +48,6 @@ import './css/SignIn.css'
                     }} 
                     className="b dib dim pointer ba pa2 tc shadow-2 f4 bg-light-green ba">Register</p>
                   </div>
-
                 </div>
                 </div>
             </article>
