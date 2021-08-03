@@ -11,7 +11,7 @@ import './css/SignIn.css'
         }
 }
     render () {
-      const {onSignInSubmit,onRouteChange,email,password,onInsertUser} = this.props
+      const {onSignInSubmit,onRouteChange,email,password,onInsertUser,failed} = this.props
     return (
           <main className="center background shadow-5 pa2 black-80" style={{width:'30vw',height:'auto'}} >
             <article className="mw5 center br3 pa2-ns mv3">
@@ -39,6 +39,11 @@ import './css/SignIn.css'
                   type="submit" value="Sign in" />
                   </div>
                 <div className="mt3"> 
+                {
+                  failed =='error'? (
+                        <p> error logging in</p>
+                    )
+                }
                  <div className='center flex-wrap lh-solid'>
                     <p className="f4 ma0">don't have an account?</p>
                     <p onClick={() => {
