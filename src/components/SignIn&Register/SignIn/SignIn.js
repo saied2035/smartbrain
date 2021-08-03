@@ -39,7 +39,6 @@ import './css/SignIn.css'
                   type="submit" value="Sign in" />
                   </div>
                 <div className="mt3"> 
-                   {/*<p>{failed}</p>*/}
                  <div className='center flex-wrap lh-solid'>
                     <p className="f4 ma0">don't have an account?</p>
                     <p onClick={() => {
