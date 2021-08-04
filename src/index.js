@@ -5,7 +5,7 @@ import {createStore,combineReducers,applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { getSearch,getImage,getBoxBorders} from './components/ImageLinkForm/effects/reducers';
 import {getRoute,getSignIn,compareUserResults,signNewUser,
-	userInformation,removeErrorMsg} from  './components/SignIn&Register/effects/reducers';
+	userInformation,getRemoveState} from  './components/SignIn&Register/effects/reducers';
 import './index.css';
 import App from './App';
 import 'tachyons'
