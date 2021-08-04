@@ -58,7 +58,7 @@ const initialErrorRemoveState = {
 	remove : false
 }
 
-export const getRemoveState = (state=initialRouteState,action={}) => {
+export const getRemoveState = (state=initialErrorRemoveState,action={}) => {
 	switch (action.type){
 		case SIGN_IN_REMOVE_ERROR_MSG :
 			return Object.assign({},state, {remove : true});
