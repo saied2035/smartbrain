@@ -60,8 +60,8 @@ const initialErrorRemoveState = {
 
 export const getRemoveState = (state=initialErrorRemoveState,action={}) => {
 	switch (action.type){
-		case SIGN_IN_REMOVE_ERROR_MSG :
-			return Object.assign({},state, {remove : true});
+		case REQUEST_FAILED :
+			return Object.assign({},state, {defulat:false,remove : default});
 		default :
 			return state;		
 	}
