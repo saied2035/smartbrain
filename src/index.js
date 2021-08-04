@@ -15,7 +15,7 @@ import * as serviceWorker from './serviceWorker';
    const logger = createLogger 
    const rootReducer = combineReducers({getSearch,getImage,getBoxBorders,getRoute,getSignIn,
    	compareUserResults,signNewUser,userInformation,getRemoveState})
-   export const store = createStore(rootReducer,applyMiddleware(thunkMiddleware,logger));
+   export const store = createStore(rootReducer,applyMiddleware(logger,thunkMiddleware));
 ReactDOM.render(
      <Provider store={store}>
 	     <App />
