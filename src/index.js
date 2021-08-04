@@ -5,14 +5,14 @@ import {createStore,combineReducers,applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { getSearch,getImage,getBoxBorders} from './components/ImageLinkForm/effects/reducers';
 import {getRoute,getSignIn,compareUserResults,signNewUser,
-	userInformation} from  './components/SignIn&Register/effects/reducers';
+	userInformation,removeErrorMsg} from  './components/SignIn&Register/effects/reducers';
 import './index.css';
 import App from './App';
 import 'tachyons'
 import * as serviceWorker from './serviceWorker';
 
    const rootReducer = combineReducers({getSearch,getImage,getBoxBorders,getRoute,getSignIn,
-   	compareUserResults,signNewUser,userInformation})
+   	compareUserResults,signNewUser,userInformation,getRemoveState})
    export const store = createStore(rootReducer,applyMiddleware(thunkMiddleware));
 ReactDOM.render(
      <Provider store={store}>

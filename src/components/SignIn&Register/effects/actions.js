@@ -6,6 +6,7 @@ import {
     SIGN_IN_EMAIL,
     SIGN_IN_PASSWORD,
     SIGN_IN_DEFAULT,
+    SIGN_IN_REMOVE_ERROR_MSG,
     REGISTER_EMAIL,
     REGISTER_PASSWORD,
     REGISTER_NAME,
@@ -75,6 +76,11 @@ export const newUser = (target) => {
         }
 }
 
+export const removeErrorMsg = () => {
+    return {
+        type: SIGN_IN_REMOVE_ERROR_MSG
+    }
+}
 export const setRoute = (text) => {
     if(text==='home'){
         return {

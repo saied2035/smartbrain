@@ -11,7 +11,7 @@ import './css/SignIn.css'
         }
 }
     render () {
-      const {onSignInSubmit,onRouteChange,email,password,onInsertUser,failed} = this.props
+      const {getRemoveState,onSignInSubmit,onRouteChange,email,password,onInsertUser,failed,remove} = this.props
     return (
           <main className="center background shadow-5 pa2 black-80" style={{width:'30vw',height:'auto'}} >
             <article className="mw5 center br3 pa2-ns mv3">
@@ -26,7 +26,8 @@ import './css/SignIn.css'
                   <div className="mv3">
                     <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
                     <input className="b pa2 input-reset ba bg-transparent hover-bg-light-green hover-green w-100" 
-                    onChange={onSignInSubmit} type="password" name="password"  id="password" />
+                    onChange={onSignInSubmit} onClick={getRemoveState} 
+                    type="password" name="password"  id="password" />
                   </div>
                 </fieldset>
                 <div>
@@ -40,7 +41,12 @@ import './css/SignIn.css'
                   </div>
                 <div className="mt3">                    
                  <div className='center flex-wrap lh-solid'>
-                    <p className='f4'>{failed}</p>
+                    {
+                      remove ?
+                      (<p className='f4 dn'>{failed}</p>)
+                      :
+                      (<p className='f4'>{failed}</p>)
+                    }
                     <p className="f4 ma0">don't have an account?</p>
                     <p onClick={() => {
                       onSignInSubmit('reset')

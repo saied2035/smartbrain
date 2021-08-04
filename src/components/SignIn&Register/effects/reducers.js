@@ -6,6 +6,7 @@ import {
     SIGN_IN_EMAIL,
     SIGN_IN_PASSWORD,
     SIGN_IN_DEFAULT,
+    SIGN_IN_REMOVE_ERROR_MSG,
     REGISTER_EMAIL,
     REGISTER_PASSWORD,
     REGISTER_NAME,
@@ -48,6 +49,19 @@ export const signNewUser = (state=initialRegisterState,action={}) => {
 			return Object.assign({},state, {name:action.payload});			
 		case REGISTER_DEFAULT :
 			return Object.assign({},state, {email:'',password:'',name:''});
+		default :
+			return state;		
+	}
+}
+
+const initialErrorRemoveState = {
+	remove : false
+}
+
+export const getRemoveState = (state=initialRouteState,action={}) => {
+	switch (action.type){
+		case SIGN_IN_REMOVE_ERROR_MSG :
+			return Object.assign({},state, {remove : true});
 		default :
 			return state;		
 	}

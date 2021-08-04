@@ -7,7 +7,8 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Register from './components/SignIn&Register/Register/Register';
 import SignIn from './components/SignIn&Register/SignIn/SignIn';
 import {getSearchBar,getImageUrl,getBox} from './components/ImageLinkForm/effects/actions';
-import {setRoute,checkUser,compareUser,newUser,getUserDetailes} from './components/SignIn&Register/effects/actions'
+import {setRoute,checkUser,compareUser,newUser,
+        getUserDetailes,removeErrorMsg} from './components/SignIn&Register/effects/actions'
 import {store} from './index'
 import './App.css';
 
@@ -31,7 +32,8 @@ const state = (state) => {
     registerPassword : state.signNewUser.password,
     registerName : state.signNewUser.name,
     requestUser: state.compareUserResults.user,
-    user : state.userInformation.user
+    user : state.userInformation.user,
+    remove : state.getRemoveState.remove
 	}
 }
 const action = (action) => {
@@ -43,15 +45,17 @@ const action = (action) => {
      onSignInSubmit : (event) => action(checkUser(event.target)),
      onRegisterSubmit : (event) =>  action(newUser(event.target)),
      onInsertUser : (email,password,name) => action(compareUser(email,password,name)), 
-     getUserInformation : (user) => action(getUserDetailes(user))
+     getUserInformation : (user) => action(getUserDetailes(user)),
+     onInputClick : () => action(removeErrorMsg())
   }
 }
 class App extends  Component {
 
 
   render () {
-      const {onSearchChange,onButtonClick,imageUrl,error,onLoadImage,box,route,onRouteChange,onSignInSubmit} = this.props;
-      const {onInsertUser,signInEmail,signInPassword,successServer,failedServer} = this.props;
+      const {onSearchChange,onButtonClick,imageUrl,error,onLoadImage,box,route,onRouteChange
+        ,onSignInSubmit} = this.props;
+      const {onInsertUser,signInEmail,signInPassword,successServer,failedServer,remove} = this.props;
       const {onRegisterSubmit,registerEmail,registerPassword,registerName} = this.props;
       const {requestUser,getUserInformation} = this.props;
       return(
@@ -65,6 +69,8 @@ class App extends  Component {
          <SignIn 
          success={successServer} 
          failed ={failedServer}
+         remove = {remove}
+         onInputClick= {onInputClick}
          onInsertUser={onInsertUser} 
          email={signInEmail} 
          password={signInPassword} 
