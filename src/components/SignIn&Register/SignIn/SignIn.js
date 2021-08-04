@@ -11,7 +11,7 @@ import './css/SignIn.css'
         }
 }
     render () {
-      const {getRemoveState,onSignInSubmit,onRouteChange,email,password,onInsertUser,failed,remove} = this.props
+      const {onInputClick,onSignInSubmit,onRouteChange,email,password,onInsertUser,failed,remove} = this.props
     return (
           <main className="center background shadow-5 pa2 black-80" style={{width:'30vw',height:'auto'}} >
             <article className="mw5 center br3 pa2-ns mv3">
@@ -21,12 +21,13 @@ import './css/SignIn.css'
                   <div className="mt3">
                     <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
                     <input className="pa2 input-reset ba bg-transparent hover-bg-light-green hover-green w-100" 
-                    onChange={onSignInSubmit} type="email" name="email-address"  id="email-address" />
+                    onChange={onSignInSubmit} onClick={onInputClick} 
+                    type="email" name="email-address"  id="email-address" />
                   </div>
                   <div className="mv3">
                     <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
                     <input className="b pa2 input-reset ba bg-transparent hover-bg-light-green hover-green w-100" 
-                    onChange={onSignInSubmit} onClick={getRemoveState} 
+                    onChange={onSignInSubmit} onClick={onInputClick} 
                     type="password" name="password"  id="password" />
                   </div>
                 </fieldset>
