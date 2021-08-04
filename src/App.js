@@ -46,7 +46,7 @@ const action = (action) => {
      onRegisterSubmit : (event) =>  action(newUser(event.target)),
      onInsertUser : (email,password,name) => action(compareUser(email,password,name)), 
      getUserInformation : (user) => action(getUserDetailes(user)),
-     onInputClick : () => action(removeErrorMsg())
+     onInputClick : (event) => action(removeErrorMsg(event))
   }
 }
 class App extends  Component {
