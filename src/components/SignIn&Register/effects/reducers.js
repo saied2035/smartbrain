@@ -55,13 +55,13 @@ export const signNewUser = (state=initialRegisterState,action={}) => {
 }
 
 const initialErrorRemoveState = {
-	remove : false
+   remove : false
 }
 
 export const getRemoveState = (state=initialErrorRemoveState,action={}) => {
 	switch (action.type){
-		case REQUEST_FAILED :
-			return Object.assign({},state, {remove : true});
+		case SIGN_IN_REMOVE_ERROR_MSG :
+			return Object.assign({},state, {remove : true,remove:false});
 		default :
 			return state;		
 	}
