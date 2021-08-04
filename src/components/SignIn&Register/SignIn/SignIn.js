@@ -46,7 +46,7 @@ import './css/SignIn.css'
                       remove ?
                       (<p className='f4 dn'>{failed}</p>)
                       :
-                      (<p className='f4 red shadow-2 b pa3'>{failed}</p>)
+                      (<p className='f4 red shadow-2 b pa3 ba'>{failed}</p>)
                     }
                     <p className="f4 ma0">don't have an account?</p>
                     <p onClick={() => {
