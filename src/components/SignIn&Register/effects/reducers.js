@@ -61,7 +61,7 @@ const initialErrorRemoveState = {
 export const getRemoveState = (state=initialErrorRemoveState,action={}) => {
 	switch (action.type){
 		case REQUEST_FAILED :
-			return Object.assign({},state, {defulat:false,remove : default});
+			return Object.assign({},state, {remove : true});
 		default :
 			return state;		
 	}
