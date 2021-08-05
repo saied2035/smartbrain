@@ -13,20 +13,20 @@ import './css/SignIn.css'
     render () {
       const {onInputClick,onSignInSubmit,onRouteChange,email,password,onInsertUser,failed,remove} = this.props
     return (
-          <main className="center background shadow-5 pa2 black-80" style={{width:'30vw',height:'auto'}} >
+          <main className="center background shadow-5 pa2 black-80" style={{width:'34vw',height:'82vh'}} >
             <article className="mw5 center br3 pa2-ns mv3">
               <div className="center flex-wrap">
                 <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                   <legend className="f1 fw6 ph0 mh0 tc b">Sign In</legend>
                   <div className="mt3">
                     <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
-                    <input className="pa2 input-reset ba bg-transparent hover-bg-light-green hover-green w-100" 
+                    <input className="pa2 input-reset ba w-100" 
                     onChange={onSignInSubmit} onClick={onInputClick} 
                     type="email" name="email-address"  id="email-address" />
                   </div>
                   <div className="mv3">
                     <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
-                    <input className="b pa2 input-reset ba bg-transparent hover-bg-light-green hover-green w-100" 
+                    <input className="b pa2 input-reset ba w-100" 
                     onChange={onSignInSubmit} onClick={onInputClick} 
                     type="password" name="password"  id="password" />
                   </div>
@@ -36,24 +36,25 @@ import './css/SignIn.css'
                     onInsertUser(email,password)
                   }
                   }  
-                  className="b ph3 pv2 input-reset ba b--dark-green bg-transparent 
+                  className="db b ph3 pv2 input-reset b--dark-green bg-white 
                   grow pointer f3 hover-bg-black hover-light-green" 
                   type="submit" value="Sign in" />
                   </div>
                 <div className="mt3">                    
                  <div className='center flex-wrap lh-solid'>
                     {
-                      remove ?
-                      (<p className='f4 dn'>{failed}</p>)
+                      remove || !failed.length ?
+                      (<p className='dn'>{failed}</p>)
                       :
-                      (<p className='f4 shadow-5 pa2'>{failed}</p>)
+
+                      (<p className='ma0 f5 b dark-red georgia shadow-5 pa2'>{failed}</p>)
                     }
-                    <p className="f4 ma0">don't have an account?</p>
+                    <p className="f4 mt2">don't have an account?</p>
                     <p onClick={() => {
                       onSignInSubmit('reset')
                       onRouteChange('register')
                     }} 
-                    className="b dib dim pointer ba pa2 tc shadow-2 f4 bg-light-green ba">Register</p>
+                    className="ma0 b dim pointer ba pa2 tc shadow-2 f4 bg-light-green ba">Register</p>
                   </div>
                 </div>
                 </div>

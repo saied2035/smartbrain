@@ -123,7 +123,7 @@ export const setRoute = (text) => {
              })
              .then(response => response.json())
              .then(data => {
-                if(data === 'error longing in') {
+                if(!data.name) {
                  request({type:REQUEST_FAILED,payload: data})
                 }
                 else {
