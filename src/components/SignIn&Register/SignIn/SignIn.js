@@ -16,7 +16,7 @@ import './css/SignIn.css'
           <main className="center background shadow-5 pa2 black-80" style={{width:'34vw',height:'82vh'}} >
             <article className="mw5 center br3 pa2-ns mv3">
               <div className="center flex-wrap">
-                <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
+                <fieldset id="sign_in" className="ba b--transparent ph0 mh0">
                   <legend className="f1 fw6 ph0 mh0 tc b">Sign In</legend>
                   <div className="mt3">
                     <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
@@ -54,7 +54,7 @@ import './css/SignIn.css'
                       onSignInSubmit('reset')
                       onRouteChange('register')
                     }} 
-                    className="ma0 b dim pointer ba pa2 tc shadow-2 f4 bg-light-green ba">Register</p>
+                    className="ma0 b dim pointer pa2 tc shadow-2 f4 bg-light-green ba">Register</p>
                   </div>
                 </div>
                 </div>
