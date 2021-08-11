@@ -144,8 +144,8 @@ export const setRoute = (text) => {
              })
              .then(response => response.json())
              .then(data => {
-                if(data === 'error register') {
-                request({type:REQUEST_FAILED,payload:'error'})
+                if(!data.name) {
+                request({type:REQUEST_FAILED,payload:data})
                 }
               else {
                 request({type:REQUEST_SUCCESS,payload:data})
