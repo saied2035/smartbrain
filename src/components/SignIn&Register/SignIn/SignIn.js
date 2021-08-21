@@ -18,18 +18,36 @@ import './css/SignIn.css'
               <div className="center flex-wrap">
                 <fieldset id="sign_in" className="ba b--transparent ph0 mh0">
                   <legend className="f1 fw6 ph0 mh0 tc b">Sign In</legend>
-                  <div className="mt3">
-                    <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
-                    <input className="pa2 input-reset ba w-100" 
-                    onChange={onSignInSubmit} onClick={onInputClick} 
-                    type="email" name="email-address"  id="email-address" />
-                  </div>
-                  <div className="mv3">
-                    <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
-                    <input className="b pa2 input-reset ba w-100" 
-                    onChange={onSignInSubmit} onClick={onInputClick} 
-                    type="password" name="password"  id="password" />
-                  </div>
+                  {   
+                    failed.length ?  
+                      <div>         
+                          <div className="mt3">
+                          <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
+                          <input className="pa2 input-reset ba w-100" 
+                          onChange={onSignInSubmit} onClick={onInputClick} 
+                          type="email" name="email-address"  id="email-address" />
+                          </div>
+                          <div className="mt3">
+                          <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
+                          <input className="b pa2 input-reset ba w-100" 
+                          onChange={onSignInSubmit} onClick={onInputClick} 
+                          type="password" name="password"  id="password" />
+                          </div>
+                      </div>
+                     : 
+                      <div>         
+                          <div className="mt3">
+                          <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
+                          <input className="pa2 input-reset ba w-100" 
+                          onChange={onSignInSubmit} type="email" name="email-address"  id="email-address" />
+                          </div>
+                          <div className="mt3">
+                          <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
+                          <input className="b pa2 input-reset ba w-100" 
+                          onChange={onSignInSubmit} type="password" name="password"  id="password" />
+                          </div>
+                      </div>                      
+                  }
                 </fieldset>
                 <div>
                   <input onClick={() => {

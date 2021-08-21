@@ -144,7 +144,7 @@ export const setRoute = (text) => {
              })
              .then(response => response.json())
              .then(data => {
-                if(!data.name) {
+                if(!data.email) {
                 request({type:REQUEST_FAILED,payload:data})
                 }
               else {
