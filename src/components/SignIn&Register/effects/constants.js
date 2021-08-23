@@ -17,5 +17,10 @@ export const REGISTER_PASSWORD='REGISTER_PASSWORD';
 export const REGISTER_NAME='REGISTER_NAME';
 export const REGISTER_DEFAULT='REGISTER_DEFAULT';
 
+//check empty inputs
+export const EMPTY_EMAIL='EMPTY_EMAIL';
+export const EMPTY_PASSWORD='EMPTY_PASSWORD';
+export const EMPTY_NAME='EMPTY_EMAIL';
+export const EMPTY_ALL='EMPTY_EMAIL';
 //user information
 export const USER_INFORMATION='USER_INFORMATION';
