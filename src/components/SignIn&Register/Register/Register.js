@@ -38,7 +38,7 @@ import './css/Register.css'
                   </div>
                 </fieldset>
                 <div>
-                  <input onClick={() => onInsertUser(email,password,name)} 
+                  <input onClick={() => onInsertUser({email,password,name})} 
                   className="db b ph3 pv2 input-reset b--dark-green bg-white 
                   grow pointer f3 hover-bg-black hover-light-green" 
                   type="submit" value="Register" />

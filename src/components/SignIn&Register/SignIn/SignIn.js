@@ -51,7 +51,7 @@ import './css/SignIn.css'
                 </fieldset>
                 <div>
                   <input onClick={() => {
-                    onInsertUser(email,password)
+                    onInsertUser({email,password})
                   }
                   }  
                   className="db b ph3 pv2 input-reset b--dark-green bg-white 

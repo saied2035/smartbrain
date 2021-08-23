@@ -14,10 +14,6 @@ import {
     REQUEST_PENDING,
     REQUEST_SUCCESS,
     REQUEST_FAILED,
-    EMPTY_EMAIL,
-    EMPTY_PASSWORD,
-    EMPTY_NAME,
-    EMPTY_ALL,
     USER_INFORMATION
 } from './constants.js'
 
@@ -114,15 +110,15 @@ export const setRoute = (text) => {
         }
     }         
 } 
-  export const compareUser = (email,password,name='') => (request) => {
+  export const compareUser = (props) => (request) => {
               request({type: REQUEST_PENDING,payload: true})
-               if(!name.length){
+               if(!Object.keys(props).includes("name")){
               fetch('https://smart-brain-api-nile.herokuapp.com/signin', {
                 method: 'post',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({
-                    email: email,
-                    password : password
+                    email: props.email,
+                    password : props.password
                 })
              })
              .then(response => response.json())
@@ -134,16 +130,16 @@ export const setRoute = (text) => {
                 request({type:REQUEST_SUCCESS,payload:data})
               }  
             })
-             .catch(error => request({type:REQUEST_FAILED,payload: 'error'}))
+             .catch(error => request({type:REQUEST_FAILED,payload: 'error sending request'}))
          }
          else {
               fetch('https://smart-brain-api-nile.herokuapp.com/register', {
                 method: 'post',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({
-                    email: email,
-                    password : password,
-                    name : name
+                    email: props.email,
+                    password : props.password,
+                    name : props.name
                 })
              })
              .then(response => response.json())
@@ -155,7 +151,7 @@ export const setRoute = (text) => {
                 request({type:REQUEST_SUCCESS,payload:data})
               }  
             })  
-             .catch(error => request({type:REQUEST_FAILED,payload: 'error'}))            
+             .catch(error => request({type:REQUEST_FAILED,payload: 'error sending request'}))            
          }    
  }
 
