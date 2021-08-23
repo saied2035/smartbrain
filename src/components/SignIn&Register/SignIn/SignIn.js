@@ -24,13 +24,13 @@ import './css/SignIn.css'
                           <div className="mt3">
                           <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
                           <input className="pa2 input-reset ba w-100" 
-                          onChange={onSignInSubmit} onClick={onInputClick} 
+                          onChange={onSignInSubmit} onMouseEnter={onInputClick} 
                           type="email" name="email-address"  id="email-address" />
                           </div>
                           <div className="mt3">
                           <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
                           <input className="b pa2 input-reset ba w-100" 
-                          onChange={onSignInSubmit} onClick={onInputClick} 
+                          onChange={onSignInSubmit} onMouseEnter={onInputClick} 
                           type="password" name="password"  id="password" />
                           </div>
                       </div>
@@ -61,7 +61,7 @@ import './css/SignIn.css'
                 <div className="mt3">                    
                  <div className='center flex-wrap lh-solid'>
                     {
-                      remove || !failed.length ?
+                      remove?
                       (<p className='dn'>{failed}</p>)
                       :
 
