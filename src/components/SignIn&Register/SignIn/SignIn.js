@@ -61,11 +61,10 @@ import './css/SignIn.css'
                 <div className="mt3">                    
                  <div className='center flex-wrap lh-solid'>
                     {
-                      remove?
+                      remove || !failed.length?
                       (<p className='dn'>{failed}</p>)
                       :
-
-                      (<p className='ma0 f5 b dark-red georgia shadow-5 pa2'>{failed}</p>)
+                      (<p className='ma0 f5 center b dark-red georgia shadow-5 pa2 ph3'>{failed}</p>)
                     }
                     <p className="f4 mt2">don't have an account?</p>
                     <p onClick={() => {

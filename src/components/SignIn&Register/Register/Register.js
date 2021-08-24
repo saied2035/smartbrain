@@ -11,31 +11,55 @@ import './css/Register.css'
         }
       }  
     render(){
-      const {onRouteChange,onRegisterSubmit,onInsertUser,name,email,password} = this.props
+      const {onRouteChange,onRegisterSubmit,onInsertUser,name,email,password
+             ,onInputClick,failed,remove} = this.props
     return (
           <main className="center background shadow-5 pa2 black-80" style={{width:'34vw',height:'82vh'}} >
             <article className="mw5 center br3 pa2-ns mv3">
               <div className="center flex-wrap">
                 <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                   <legend className="f1 fw6 ph0 mh0 tc b">Register</legend>
-                  <div className="mt3">
-                    <label className="db fw6 lh-copy f4" htmlFor="Username">Username</label>
-                    <input className="pa2 input-reset ba w-100" 
-                    onChange={onRegisterSubmit} 
-                    type="text" name="username"  id="name" />
-                  </div>
-                  <div className="">
-                    <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
-                    <input className="pa2 input-reset ba w-100" 
-                    onChange={onRegisterSubmit} 
-                    type="email" name="email"  id="email" />
-                  </div>
-                  <div className="">
-                    <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
-                    <input className="b pa2 input-reset ba w-100"  
-                    onChange={onRegisterSubmit}
-                    type="password" name="password"  id="password" />
-                  </div>
+                  {
+                    failed.length ?
+                    <div>
+                        <div className="mt1">
+                          <label className="db fw6 lh-copy f4" htmlFor="Username">Username</label>
+                          <input className="pa2 input-reset ba w-100" onMouseEnter={onInputClick} 
+                          onChange={onRegisterSubmit} type="text" name="username"  id="name" />
+                        </div>
+                        <div className="mt1">
+                          <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
+                          <input className="pa2 input-reset ba w-100" onMouseEnter={onInputClick} 
+                          onChange={onRegisterSubmit} type="email" name="email"  id="email" />
+                        </div>
+                        <div className="mt1">
+                          <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
+                          <input className="b pa2 input-reset ba w-100" onMouseEnter={onInputClick}  
+                          onChange={onRegisterSubmit} type="password" name="password"  id="password" />
+                        </div>
+                     </div>                    
+                    :
+                      <div>
+                        <div className="mt1">
+                          <label className="db fw6 lh-copy f4" htmlFor="Username">Username</label>
+                          <input className="pa2 input-reset ba w-100" 
+                          onChange={onRegisterSubmit} 
+                          type="text" name="username"  id="name" />
+                        </div>
+                        <div className="mt1">
+                          <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
+                          <input className="pa2 input-reset ba w-100" 
+                          onChange={onRegisterSubmit} 
+                          type="email" name="email"  id="email" />
+                        </div>
+                        <div className="mt1">
+                          <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
+                          <input className="b pa2 input-reset ba w-100"  
+                          onChange={onRegisterSubmit}
+                          type="password" name="password"  id="password" />
+                        </div>
+                      </div>
+                  }
                 </fieldset>
                 <div>
                   <input onClick={() => onInsertUser({email,password,name})} 
@@ -43,14 +67,20 @@ import './css/Register.css'
                   grow pointer f3 hover-bg-black hover-light-green" 
                   type="submit" value="Register" />
                 </div>
-                <div className="mt3"> 
+                <div className ="ma0"> 
                  <div className='center flex-wrap lh-solid'>
-                    <p className="f4 ma0">have an account?</p>
+                    {
+                      remove || !failed.length?
+                      (<p className='dn'>{failed}</p>)
+                      :
+                      (<p className='ma0 f5 center b dark-red georgia shadow-5 pa2 ph3'>{failed}</p>)
+                    }
+                    <p className="f4 mt2">have an account?</p>
                     <p onClick={() => {
                       onRegisterSubmit('reset')
                       onRouteChange('signIn')
                     }} 
-                    className="ml2 b dim pointer pa2 tc shadow-2 f4 bg-light-green ba">sign in</p>
+                    className="ma0 ml2 b dim pointer pa2 tc shadow-2 f4 bg-light-green ba">sign in</p>
                   </div>
                 </div>
               </div>

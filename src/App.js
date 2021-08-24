@@ -92,7 +92,11 @@ class App extends  Component {
          user={requestUser} 
          getUserInformation={getUserInformation}
          name={registerName} 
-         success={successServer} />
+         success={successServer} 
+         failed ={failedServer}
+         remove = {remove}
+         onInputClick= {onInputClick} 
+         />
          :
          <div>
         <Logo />
