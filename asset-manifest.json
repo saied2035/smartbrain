@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/facerecognition/static/css/main.4d6826b1.chunk.css",
-    "main.js": "/facerecognition/static/js/main.2a20030a.chunk.js",
-    "main.js.map": "/facerecognition/static/js/main.2a20030a.chunk.js.map",
+    "main.css": "/facerecognition/static/css/main.02b20983.chunk.css",
+    "main.js": "/facerecognition/static/js/main.8811f464.chunk.js",
+    "main.js.map": "/facerecognition/static/js/main.8811f464.chunk.js.map",
     "runtime-main.js": "/facerecognition/static/js/runtime-main.f7dbbb6f.js",
     "runtime-main.js.map": "/facerecognition/static/js/runtime-main.f7dbbb6f.js.map",
     "static/css/2.6d7c7915.chunk.css": "/facerecognition/static/css/2.6d7c7915.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.f68b8d3d.chunk.js.map": "/facerecognition/static/js/2.f68b8d3d.chunk.js.map",
     "index.html": "/facerecognition/index.html",
     "static/css/2.6d7c7915.chunk.css.map": "/facerecognition/static/css/2.6d7c7915.chunk.css.map",
-    "static/css/main.4d6826b1.chunk.css.map": "/facerecognition/static/css/main.4d6826b1.chunk.css.map",
+    "static/css/main.02b20983.chunk.css.map": "/facerecognition/static/css/main.02b20983.chunk.css.map",
     "static/js/2.f68b8d3d.chunk.js.LICENSE.txt": "/facerecognition/static/js/2.f68b8d3d.chunk.js.LICENSE.txt",
     "static/media/App.css": "/facerecognition/static/media/VampireBiteSolid-AL0wD.175f0a1d.woff"
   },
@@ -18,7 +18,7 @@
     "static/js/runtime-main.f7dbbb6f.js",
     "static/css/2.6d7c7915.chunk.css",
     "static/js/2.f68b8d3d.chunk.js",
-    "static/css/main.4d6826b1.chunk.css",
-    "static/js/main.2a20030a.chunk.js"
+    "static/css/main.02b20983.chunk.css",
+    "static/js/main.8811f464.chunk.js"
   ]
 }
