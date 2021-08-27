@@ -14,7 +14,7 @@ import './css/Register.css'
       const {onRouteChange,onRegisterSubmit,onInsertUser,name,email,password
              ,onInputClick,failed,remove} = this.props
     return (
-          <main className="center background shadow-5 pa2 black-80" style={{width:'34vw',height:'82vh'}} >
+          <main className="center background shadow-5 pa2 black-80" style={{width:'34vw',height:'85vh'}} >
             <article className="mw5 center br3 pa2-ns mv3">
               <div className="center flex-wrap">
                 <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
@@ -22,17 +22,17 @@ import './css/Register.css'
                   {
                     failed.length ?
                     <div>
-                        <div className="mt1">
+                        <div className="ma0">
                           <label className="db fw6 lh-copy f4" htmlFor="Username">Username</label>
                           <input className="pa2 input-reset ba w-100" onMouseEnter={onInputClick} 
                           onChange={onRegisterSubmit} type="text" name="username"  id="name" />
                         </div>
-                        <div className="mt1">
+                        <div className="ma0">
                           <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
                           <input className="pa2 input-reset ba w-100" onMouseEnter={onInputClick} 
                           onChange={onRegisterSubmit} type="email" name="email"  id="email" />
                         </div>
-                        <div className="mt1">
+                        <div className="ma0">
                           <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
                           <input className="b pa2 input-reset ba w-100" onMouseEnter={onInputClick}  
                           onChange={onRegisterSubmit} type="password" name="password"  id="password" />
@@ -75,7 +75,7 @@ import './css/Register.css'
                       :
                       (<p className='ma0 f5 center b dark-red georgia shadow-5 pa2 ph3'>{failed}</p>)
                     }
-                    <p className="f4 mt2">have an account?</p>
+                    <p className="f4 mt2" style={{marginBlockEnd:'0.5rem'}}>have an account?</p>
                     <p onClick={() => {
                       onRegisterSubmit('reset')
                       onRouteChange('signIn')

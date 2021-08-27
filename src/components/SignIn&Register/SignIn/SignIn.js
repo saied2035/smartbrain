@@ -13,7 +13,7 @@ import './css/SignIn.css'
     render () {
       const {onInputClick,onSignInSubmit,onRouteChange,email,password,onInsertUser,failed,remove} = this.props
     return (
-          <main className="center background shadow-5 pa2 black-80" style={{width:'34vw',height:'82vh'}} >
+          <main className="center background shadow-5 pa2 black-80" style={{width:'34vw',height:'85vh'}} >
             <article className="mw5 center br3 pa2-ns mv3">
               <div className="center flex-wrap">
                 <fieldset id="sign_in" className="ba b--transparent ph0 mh0">
@@ -21,13 +21,13 @@ import './css/SignIn.css'
                   {   
                     failed.length ?  
                       <div>         
-                          <div className="mt3">
+                          <div className="mt0">
                           <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
                           <input className="pa2 input-reset ba w-100" 
                           onChange={onSignInSubmit} onMouseEnter={onInputClick} 
                           type="email" name="email-address"  id="email-address" />
                           </div>
-                          <div className="mt3">
+                          <div className="mt0">
                           <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
                           <input className="b pa2 input-reset ba w-100" 
                           onChange={onSignInSubmit} onMouseEnter={onInputClick} 
@@ -36,12 +36,12 @@ import './css/SignIn.css'
                       </div>
                      : 
                       <div>         
-                          <div className="mt3">
+                          <div className="mt1">
                           <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
                           <input className="pa2 input-reset ba w-100" 
                           onChange={onSignInSubmit} type="email" name="email-address"  id="email-address" />
                           </div>
-                          <div className="mt3">
+                          <div className="mt1">
                           <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
                           <input className="b pa2 input-reset ba w-100" 
                           onChange={onSignInSubmit} type="password" name="password"  id="password" />
@@ -66,7 +66,7 @@ import './css/SignIn.css'
                       :
                       (<p className='ma0 f5 center b dark-red georgia shadow-5 pa2 ph3'>{failed}</p>)
                     }
-                    <p className="f4 mt2">don't have an account?</p>
+                    <p className="f4 mt2" style={{marginBlockEnd:'0.5rem'}}>don't have an account?</p>
                     <p onClick={() => {
                       onSignInSubmit('reset')
                       onRouteChange('register')
