@@ -93,10 +93,14 @@ class App extends  Component {
          getUserInformation={getUserInformation}
          name={registerName} 
          success={successServer} 
+         route= {route} 
          failed ={failedServer}
          remove = {remove}
          onInputClick= {onInputClick} 
          />
+         :
+         route==='emailValidation' ?
+         <h1>{'emailValidation'}</h1>
          :
          <div>
         <Logo />

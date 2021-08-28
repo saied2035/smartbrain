@@ -6,7 +6,7 @@ import './css/Register.css'
         const {onRouteChange,onRegisterSubmit,getUserInformation,user,success} = this.props
         if ( success === 'success') {
           onRegisterSubmit('reset')
-          onRouteChange('home')
+          onRouteChange('emailValidation')
           getUserInformation(user)
         }
       }  

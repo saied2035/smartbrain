@@ -2,7 +2,7 @@ import {
     GO_HOME,
     REGISTER,
     SIGN_IN,
-    DEFAULT,
+    EMAIL_VARVICATION,
     SIGN_IN_EMAIL,
     SIGN_IN_PASSWORD,
     SIGN_IN_DEFAULT,
@@ -75,6 +75,7 @@ const initialRouteState = {
 
 }
 export const getRoute = (state=initialRouteState,action={}) => {
+	console.log(action.type)
 	switch (action.type){
 		case GO_HOME :
 			return Object.assign({},state, {route:action.payload,default:false});
@@ -82,8 +83,8 @@ export const getRoute = (state=initialRouteState,action={}) => {
 			return Object.assign({},state, {route:action.payload,default:false});
 		case REGISTER :
 			return Object.assign({},state, {route:action.payload,default:false});
-		case DEFAULT :
-			return Object.assign({},state, {default:true});
+		case EMAIL_VARVICATION :
+			return Object.assign({},state, {route:action.payload,default:false});
 		default :
 			return state;		
 	}

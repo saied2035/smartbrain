@@ -6,7 +6,7 @@ import './css/SignIn.css'
         const {onRouteChange,onSignInSubmit,getUserInformation,user,success} = this.props
         if ( success === 'success') {
           onSignInSubmit('reset')
-          onRouteChange('home')
+          onRouteChange('emailValidation')
           getUserInformation(user)
         }
 }

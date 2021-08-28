@@ -2,7 +2,7 @@
 export const GO_HOME='GO_HOME';
 export const REGISTER = 'REGISTER';
 export const SIGN_IN='SIGN_IN';
-export const DEFAULT = 'DEFAULT';
+export const EMAIL_VARVICATION = 'EMAIL_VARVICATION';
 //signin
 export const SIGN_IN_EMAIL='SIGN_IN_EMAIL';
 export const SIGN_IN_PASSWORD='SIGN_IN_PASSWORD';

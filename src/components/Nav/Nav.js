@@ -1,7 +1,7 @@
 import React from 'react';
 
  const Nav = ({onSearchChange,onRouteChange,onRegisterSubmit,onSignInSubmit,getUserInformation,route}) => {
- 	if(route==='home'){
+ 	if(route==='home' || route==='emailValidation' ){
   return (
    <div className='flex justify-end'>
 	   <p onClick={() => {
@@ -40,7 +40,6 @@ import React from 'react';
    </div>
   );
   }
-
  }
  
 export default Nav;

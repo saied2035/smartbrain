@@ -2,7 +2,7 @@ import {
     GO_HOME,
     REGISTER,
     SIGN_IN,
-    DEFAULT,
+    EMAIL_VARVICATION,
     SIGN_IN_EMAIL,
     SIGN_IN_PASSWORD,
     SIGN_IN_DEFAULT,
@@ -105,8 +105,8 @@ export const setRoute = (text) => {
 
     else {
         return {
-            type : DEFAULT,
-            payload : true
+            type : EMAIL_VARVICATION,
+            payload : text
         }
     }         
 } 
@@ -127,7 +127,7 @@ export const setRoute = (text) => {
                  request({type:REQUEST_FAILED,payload: data})
                 }
                 else {
-                request({type:REQUEST_SUCCESS,payload:data})
+                 request({type:REQUEST_SUCCESS,payload:data})
               }  
             })
              .catch(error => request({type:REQUEST_FAILED,payload: 'error sending request'}))
