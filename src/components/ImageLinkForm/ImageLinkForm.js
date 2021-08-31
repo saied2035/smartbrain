@@ -14,7 +14,8 @@ import './css/ImageLinkForm.css'
 	}
 
 		return (
-			  <div style={{width:'70vw', height:'auto'}} className='center mt3 shadow-5 pa3 background-image ba b--light-green '>
+			  <div style={{width:'70vw', height:'auto'}} 
+			   className='center mt3 shadow-5 pa3 background-image ba b--light-green '>
 				  <input onChange={onSearchChange} className='w-80 bg-light-green' type='text' 
 				   placeholder='Enter image URL (jpg,jpeg or png only)'/>
 				  <button onClick={onButtonClick} className='ml2 pa1 bg-light-green pointer f3 grow'>Detect</button>

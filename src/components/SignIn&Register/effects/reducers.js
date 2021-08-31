@@ -71,20 +71,18 @@ export const getRemoveState = (state=initialErrorRemoveState,action={}) => {
 
 const initialRouteState = {
       route :  'signIn',
-      default : false,
+      verfied : true,
 
 }
 export const getRoute = (state=initialRouteState,action={}) => {
 	console.log(action.type)
 	switch (action.type){
-		case GO_HOME :
-			return Object.assign({},state, {route:action.payload,default:false});
+		case REQUEST_SUCCESS :
+			return Object.assign({},state, {route:'home',verfied:action.payload.verified});		
 		case SIGN_IN :	
-			return Object.assign({},state, {route:action.payload,default:false});
+			return Object.assign({},state, {route:action.payload});
 		case REGISTER :
-			return Object.assign({},state, {route:action.payload,default:false});
-		case EMAIL_VARVICATION :
-			return Object.assign({},state, {route:action.payload,default:false});
+			return Object.assign({},state, {route:action.payload});
 		default :
 			return state;		
 	}

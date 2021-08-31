@@ -96,19 +96,12 @@ export const setRoute = (text) => {
         }
     } 
 
-    else if(text==='register'){
+    else {
         return {
             type : REGISTER,
             payload : text
         }
-    }
-
-    else {
-        return {
-            type : EMAIL_VARVICATION,
-            payload : text
-        }
-    }         
+    } 
 } 
   export const compareUser = (props) => (request) => {
               request({type: REQUEST_PENDING,payload: true})

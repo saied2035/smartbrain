@@ -1,15 +1,6 @@
 import React,{Component} from 'react';
 import './css/SignIn.css'
   class SignIn extends Component  {
-     componentDidUpdate() {
-        // Typical usage (don't forget to compare props):
-        const {onRouteChange,onSignInSubmit,getUserInformation,user,success} = this.props
-        if ( success === 'success') {
-          onSignInSubmit('reset')
-          onRouteChange('emailValidation')
-          getUserInformation(user)
-        }
-}
     render () {
       const {onInputClick,onSignInSubmit,onRouteChange,email,password,onInsertUser,failed,remove} = this.props
     return (
@@ -55,7 +46,7 @@ import './css/SignIn.css'
                   }
                   }  
                   className="db b ph3 pv2 input-reset b--dark-green bg-white 
-                  grow pointer f3 hover-bg-black hover-light-green" 
+                  grow pointer f3 hover-bg-black hover-white" 
                   type="submit" value="Sign in" />
                   </div>
                 <div className="mt3">                    
@@ -67,10 +58,7 @@ import './css/SignIn.css'
                       (<p className='ma0 f5 center b dark-red georgia shadow-5 pa2 ph3'>{failed}</p>)
                     }
                     <p className="f4 mt2" style={{marginBlockEnd:'0.5rem'}}>don't have an account?</p>
-                    <p onClick={() => {
-                      onSignInSubmit('reset')
-                      onRouteChange('register')
-                    }} 
+                    <p onClick={() => onRouteChange('register')} 
                     className="ma0 b dim pointer pa2 tc shadow-2 f4 bg-light-green ba">Register</p>
                   </div>
                 </div>

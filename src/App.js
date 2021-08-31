@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import Nav from './components/Nav/Nav';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
+import EmailVerification from './components/EmailVerification/EmailVerification';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Register from './components/SignIn&Register/Register/Register';
 import SignIn from './components/SignIn&Register/SignIn/SignIn';
@@ -23,6 +24,7 @@ const state = (state) => {
     response : state.getImage.predict,
     box : state.getBoxBorders.box,
     route : state.getRoute.route,
+    verfied : state.getRoute.verfied,
     signInEmail : state.getSignIn.email,
     signInPassword : state.getSignIn.password,
     isPendingServer : state.compareUserResults.isPending,
@@ -55,7 +57,7 @@ class App extends  Component {
   render () {
       const {onSearchChange,onButtonClick,imageUrl,error,onLoadImage,box,route,onRouteChange
         ,onSignInSubmit,onInputClick} = this.props;
-      const {onInsertUser,signInEmail,signInPassword,successServer,failedServer,remove} = this.props;
+      const {onInsertUser,signInEmail,signInPassword,successServer,verfied,failedServer,remove} = this.props;
       const {onRegisterSubmit,registerEmail,registerPassword,registerName} = this.props;
       const {requestUser,getUserInformation} = this.props;
       return(
@@ -92,22 +94,24 @@ class App extends  Component {
          user={requestUser} 
          getUserInformation={getUserInformation}
          name={registerName} 
-         success={successServer} 
-         route= {route} 
+         success={successServer}
          failed ={failedServer}
          remove = {remove}
          onInputClick= {onInputClick} 
          />
          :
-         route==='emailValidation' ?
-         <h1>{'emailValidation'}</h1>
-         :
+         verfied ?
          <div>
-        <Logo />
-        <ImageLinkForm error={error} onButtonClick={onButtonClick}
-         onSearchChange={onSearchChange}/>
-        <FaceRecognition onLoadImage={onLoadImage} imageUrl={imageUrl} box={box}/>
-        </div>
+              <Logo />
+              <ImageLinkForm error={error} onButtonClick={onButtonClick}
+              onSearchChange={onSearchChange}/>
+              <FaceRecognition onLoadImage={onLoadImage} imageUrl={imageUrl} box={box}/>
+         </div>
+         :
+          <div>
+          {/*{<Logo />}*/}
+          <EmailVerification email={requestUser.email}/>
+          </div> 
         )
       }
        

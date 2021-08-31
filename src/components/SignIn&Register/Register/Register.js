@@ -1,15 +1,7 @@
 import React,{Component} from 'react';
 import './css/Register.css'
   class Register extends Component   {
-      componentDidUpdate() {
-        // Typical usage (don't forget to compare props):
-        const {onRouteChange,onRegisterSubmit,getUserInformation,user,success} = this.props
-        if ( success === 'success') {
-          onRegisterSubmit('reset')
-          onRouteChange('emailValidation')
-          getUserInformation(user)
-        }
-      }  
+  
     render(){
       const {onRouteChange,onRegisterSubmit,onInsertUser,name,email,password
              ,onInputClick,failed,remove} = this.props
@@ -64,7 +56,7 @@ import './css/Register.css'
                 <div>
                   <input onClick={() => onInsertUser({email,password,name})} 
                   className="db b ph3 pv2 input-reset b--dark-green bg-white 
-                  grow pointer f3 hover-bg-black hover-light-green" 
+                  grow pointer f3 hover-bg-black hover-white" 
                   type="submit" value="Register" />
                 </div>
                 <div className ="ma0"> 
@@ -76,10 +68,7 @@ import './css/Register.css'
                       (<p className='ma0 f5 center b dark-red georgia shadow-5 pa2 ph3'>{failed}</p>)
                     }
                     <p className="f4 mt2" style={{marginBlockEnd:'0.5rem'}}>have an account?</p>
-                    <p onClick={() => {
-                      onRegisterSubmit('reset')
-                      onRouteChange('signIn')
-                    }} 
+                    <p onClick={() => onRouteChange('signIn')} 
                     className="ma0 ml2 b dim pointer pa2 tc shadow-2 f4 bg-light-green ba">sign in</p>
                   </div>
                 </div>
