@@ -10,13 +10,15 @@ import SignIn from './components/SignIn&Register/SignIn/SignIn';
 import {getSearchBar,getImageUrl,getBox} from './components/ImageLinkForm/effects/actions';
 import {setRoute,checkUser,compareUser,newUser,
         getUserDetailes,removeErrorMsg} from './components/SignIn&Register/effects/actions'
+
+import { sendEmail,verifyEmail } from './components/EmailVerification/effects/actions.js'       
 import {store} from './index'
 import './App.css';
 
 
 const state = (state) => {
 	return {
-	search : state.getSearch.search,
+	  search : state.getSearch.search,
     imageUrl : state.getImage.image,
     error : state.getImage.error,
     isPending : state.getImage.isPending,
@@ -48,7 +50,9 @@ const action = (action) => {
      onRegisterSubmit : (event) =>  action(newUser(event.target)),
      onInsertUser : (email,password,name) => action(compareUser(email,password,name)), 
      getUserInformation : (user) => action(getUserDetailes(user)),
-     onInputClick : (event) => action(removeErrorMsg(event))
+     onInputClick : (event) => action(removeErrorMsg(event)),
+     sendEmail : (email) => action(sendEmail(email)),
+     verifyEmail: (text) => action(verifyEmail(text))
   }
 }
 class App extends  Component {
@@ -59,7 +63,7 @@ class App extends  Component {
         ,onSignInSubmit,onInputClick} = this.props;
       const {onInsertUser,signInEmail,signInPassword,successServer,verfied,failedServer,remove} = this.props;
       const {onRegisterSubmit,registerEmail,registerPassword,registerName} = this.props;
-      const {requestUser,getUserInformation} = this.props;
+      const {requestUser,getUserInformation,sendEmail,verifyEmail} = this.props;
       return(
       <div className="App">
         <Nav onRouteChange={onRouteChange} onRegisterSubmit={onRegisterSubmit}
@@ -110,7 +114,7 @@ class App extends  Component {
          :
           <div>
           {/*{<Logo />}*/}
-          <EmailVerification email={requestUser.email}/>
+          <EmailVerification verifyEmail={verifyEmail} sendEmail={sendEmail} email={signInEmail}/>
           </div> 
         )
       }

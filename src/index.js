@@ -7,6 +7,8 @@ import {createLogger} from 'redux-logger'
 import { getSearch,getImage,getBoxBorders} from './components/ImageLinkForm/effects/reducers';
 import {getRoute,getSignIn,compareUserResults,signNewUser,
 	userInformation,getRemoveState} from  './components/SignIn&Register/effects/reducers';
+
+import { emailVerification, codeVerification } from './components/EmailVerification/effects/reducers.js'  	
 import './index.css';
 import App from './App';
 import 'tachyons'
@@ -14,7 +16,7 @@ import * as serviceWorker from './serviceWorker';
     
    const logger = createLogger() 
    const rootReducer = combineReducers({getSearch,getImage,getBoxBorders,getRoute,getSignIn,
-   	compareUserResults,signNewUser,userInformation,getRemoveState})
+   	compareUserResults,signNewUser,userInformation,getRemoveState,emailVerification,codeVerification})
    export const store = createStore(rootReducer,applyMiddleware(thunkMiddleware,logger));
 ReactDOM.render(
      <Provider store={store}>

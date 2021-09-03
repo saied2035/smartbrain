@@ -14,6 +14,7 @@ import {
     REQUEST_PENDING,
     REQUEST_SUCCESS,
     REQUEST_FAILED,
+    VERIFIY_EMAIL_SUCCESS,
     USER_INFORMATION
 } from './constants.js'
 
@@ -77,6 +78,8 @@ const initialRouteState = {
 export const getRoute = (state=initialRouteState,action={}) => {
 	console.log(action.type)
 	switch (action.type){
+		case VERIFIY_EMAIL_SUCCESS :
+		    return Object.assign({},state, {verfied:true});
 		case REQUEST_SUCCESS :
 			return Object.assign({},state, {route:'home',verfied:action.payload.verified});		
 		case SIGN_IN :	
