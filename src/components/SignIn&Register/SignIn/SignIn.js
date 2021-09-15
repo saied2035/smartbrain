@@ -52,13 +52,16 @@ import './css/SignIn.css'
                 <div className="mt3">                    
                  <div className='center flex-wrap lh-solid'>
                     {
-                      remove || !failed.length?
+                      remove ?
                       (<p className='dn'>{failed}</p>)
                       :
                       (<p className='ma0 f5 center b dark-red georgia shadow-5 pa2 ph3'>{failed}</p>)
                     }
                     <p className="f4 mt2" style={{marginBlockEnd:'0.5rem'}}>don't have an account?</p>
-                    <p onClick={() => onRouteChange('register')} 
+                    <p onClick={() => {
+                        onSignInSubmit('reset')
+                        onRouteChange('register')
+                    }} 
                     className="ma0 b dim pointer pa2 tc shadow-2 f4 bg-light-green ba">Register</p>
                   </div>
                 </div>

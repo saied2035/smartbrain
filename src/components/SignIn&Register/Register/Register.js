@@ -62,13 +62,17 @@ import './css/Register.css'
                 <div className ="ma0"> 
                  <div className='center flex-wrap lh-solid'>
                     {
-                      remove || !failed.length?
+                      remove?
                       (<p className='dn'>{failed}</p>)
                       :
                       (<p className='ma0 f5 center b dark-red georgia shadow-5 pa2 ph3'>{failed}</p>)
                     }
                     <p className="f4 mt2" style={{marginBlockEnd:'0.5rem'}}>have an account?</p>
-                    <p onClick={() => onRouteChange('signIn')} 
+                    <p onClick={() => {
+                          onRegisterSubmit('reset')
+                          onRouteChange('signIn')
+                      }
+                    } 
                     className="ma0 ml2 b dim pointer pa2 tc shadow-2 f4 bg-light-green ba">sign in</p>
                   </div>
                 </div>

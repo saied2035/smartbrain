@@ -1,8 +1,6 @@
 import {
-    GO_HOME,
     REGISTER,
     SIGN_IN,
-    EMAIL_VARVICATION,
     SIGN_IN_EMAIL,
     SIGN_IN_PASSWORD,
     SIGN_IN_DEFAULT,
@@ -13,8 +11,7 @@ import {
     REGISTER_DEFAULT,
     REQUEST_PENDING,
     REQUEST_SUCCESS,
-    REQUEST_FAILED,
-    USER_INFORMATION
+    REQUEST_FAILED
 } from './constants.js'
 
 export const checkUser = (target) => {
@@ -30,15 +27,10 @@ export const checkUser = (target) => {
             }
         }
 
-        else if(target.type==='password'){
+        else {
             return {
                 type: SIGN_IN_PASSWORD,
                 payload : target.value
-            }
-        }
-        else {
-            return {
-                type : SIGN_IN_DEFAULT
             }
         }
 }
@@ -63,15 +55,10 @@ export const newUser = (target) => {
             }
         }
 
-        else if(target.type==='text'){
+        else {
             return {
                 type: REGISTER_NAME,
                 payload : target.value
-            }
-        }        
-        else {
-            return {
-                type : REGISTER_DEFAULT
             }
         }
 }
@@ -82,14 +69,8 @@ export const removeErrorMsg = () => {
     }
 }
 export const setRoute = (text) => {
-    if(text==='home'){
-        return {
-            type : GO_HOME,
-            payload : text
-        }
-    }
-
-    else if(text==='signIn'){
+    
+    if(text==='signIn'){
         return {
             type : SIGN_IN,
             payload : text
@@ -148,13 +129,4 @@ export const setRoute = (text) => {
          }    
  }
 
-export const getUserDetailes = (user) => {
-    if(user===undefined){
-      return {type: "RESET"}
-    }
-    return {
-        type: USER_INFORMATION,
-        payload: user
-    }
- }
 

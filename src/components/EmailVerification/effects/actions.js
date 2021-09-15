@@ -40,8 +40,8 @@ export const verifyEmail = (code) => (request) => {
              })
              .then(response => response.json())
              .then(result => {
-                if(result === 'email verified') {
-                 request({type:VERIFIY_EMAIL_SUCCESS})
+                if(result.email) {
+                 request({type:VERIFIY_EMAIL_SUCCESS,payload:result})
                 }
                 else {
                  request({type:VERIFIY_EMAIL_FAILED,payload:result})

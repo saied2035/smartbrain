@@ -1,8 +1,6 @@
 import {
-    GO_HOME,
     REGISTER,
     SIGN_IN,
-    EMAIL_VARVICATION,
     SIGN_IN_EMAIL,
     SIGN_IN_PASSWORD,
     SIGN_IN_DEFAULT,
@@ -15,7 +13,7 @@ import {
     REQUEST_SUCCESS,
     REQUEST_FAILED,
     VERIFIY_EMAIL_SUCCESS,
-    USER_INFORMATION
+    VERIFIY_EMAIL_FAILED
 } from './constants.js'
 
 const initialSignInState = {
@@ -56,11 +54,13 @@ export const signNewUser = (state=initialRegisterState,action={}) => {
 }
 
 const initialErrorRemoveState = {
-   remove : false
+   remove : true
 }
 
 export const getRemoveState = (state=initialErrorRemoveState,action={}) => {
 	switch (action.type){
+		case VERIFIY_EMAIL_FAILED:
+			return Object.assign({},state, {remove: false});		    
 		case REQUEST_FAILED :
 			return Object.assign({},state, {remove: false});
 		case SIGN_IN_REMOVE_ERROR_MSG :
@@ -103,24 +103,13 @@ export const compareUserResults = (state=initialRequestState,action={}) => {
 	switch (action.type){
 		case REQUEST_PENDING :
 			return Object.assign({},state, {user:{},isPending:action.payload,success:'',failed:''});
+		case VERIFIY_EMAIL_SUCCESS :
+		    return Object.assign({},state, {user:action.payload,isPending:false,success:'success',failed:''}); 	
 		case REQUEST_SUCCESS :	
 			return Object.assign({},state, {user:action.payload,isPending:false,success:'success',failed:''});
 		case REQUEST_FAILED :
 			return Object.assign({},state, {user:{},isPending:false,success:'',failed:action.payload});
 		default :
 			return initialRequestState;		
-	}
-}
-
-const initialUserState = {
-	user: {}
-}
-
-export const userInformation = (state=initialUserState,action={}) => {
-	switch (action.type){
-		case USER_INFORMATION :
-			return Object.assign({},state, {user:action.payload});
-		default :
-			return initialUserState;		
 	}
 }

@@ -15,11 +15,11 @@ const sendEmailState = {
 export const emailVerification = (state=sendEmailState,action={}) => {
 	switch (action.type){
 		case SENDING_EMAIL_PENDING :
-			return Object.assign({},state, {isSendPending:action.payload,sendSuccess:'',sendFailed:''});
+			return Object.assign({},state, {sendSuccess:'',isSendPending:action.payload,sendFailed:''});
 		case SENDING_EMAIL_SUCCESS :	
-			return Object.assign({},state, {isSendPending:false,sendSuccess:'success',sendFailed:''});
+			return Object.assign({},state, {sendSuccess:'success',isSendPending:false,sendFailed:''});
 		case SENDING_EMAIL_FAILED :
-			return Object.assign({},state, {isSendPending:false,sendSuccess:'',sendFailed:action.payload});
+			return Object.assign({},state, {sendSuccess:'',isSendPending:false,sendFailed:action.payload});
 		default :
 			return sendEmailState;		
 	}

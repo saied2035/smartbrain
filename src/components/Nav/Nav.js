@@ -7,7 +7,6 @@ import React from 'react';
 	   <p onClick={() => {
       onSignInSubmit('reset')
       onRegisterSubmit('reset')
-      getUserInformation(undefined)
       onRouteChange('signIn')
       onSearchChange('reset')
     }} 
@@ -20,7 +19,6 @@ import React from 'react';
    <div className='flex justify-end'>
 	   <p onClick={() => {
       onSignInSubmit('reset')
-      onRegisterSubmit('reset')
       onRouteChange('register')
     }} 
 	   className='link dim pointer pa2 ma3 shadow-2 f3 bg-light-green ba '>register</p>
@@ -32,7 +30,6 @@ import React from 'react';
       return (
    <div className='flex justify-end'>
      <p onClick={() => {
-      onSignInSubmit('reset')
       onRegisterSubmit('reset')
       onRouteChange('signIn')
     }} 
