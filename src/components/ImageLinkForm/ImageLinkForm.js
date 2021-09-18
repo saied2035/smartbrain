@@ -2,7 +2,7 @@ import React from 'react';
 import './css/ImageLinkForm.css'
 import resetImage from './resetImage.png'
 import resetImageUrl from './resetImageUrl.png'
- const ImageLinkForm = ({onInputClick,remove,onSearchChange,onButtonClick,error,imagePath,chooseImage,imageName}) => {
+ const ImageLinkForm = ({onSearchChange,onButtonClick,error,imagePath,chooseImage,imageName}) => {
 
 		return (
 			   <div>
