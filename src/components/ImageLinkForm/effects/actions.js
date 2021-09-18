@@ -29,7 +29,6 @@ export const getSearchBar = (target) =>  {
 // getImage and detect the face using Clarifai Api
 
 export const getImageUrl = (text,imageWidth) => (request) => {
-           console.log(text,imageWidth)
           if(text==="multipaleInput"){
             request({type :MULTIPALEINPUT, payload: `you can't use the two methods at the same time`})
           }
@@ -49,7 +48,6 @@ export const getImageUrl = (text,imageWidth) => (request) => {
                })
               .then(response => response.json())
               .then(response =>{
-                   console.log(response)
                 if(!response.detection){
                   request(
                            {
@@ -63,8 +61,7 @@ export const getImageUrl = (text,imageWidth) => (request) => {
                            
                            {
                                 type :IMAGE_REQUEST_SUCCESS,
-                                payload:response,
-                                imageDims: response.detection._imageDims
+                                payload:response
                             }
                         )
                 }
@@ -84,21 +81,20 @@ export const getImageUrl = (text,imageWidth) => (request) => {
 
 //get the bounding box
 export const getBox = (data) => {
-         console.log(data) 
          let feeling
          let max= 0
-         for(const expression in data.response.expressions){
-              if(data.response.expressions[expression] > max){
+         for(const expression in data.expressions){
+              if(data.expressions[expression] > max){
                  feeling = `mood: ${expression}`
-                 max = data.response.expressions[expression] 
+                 max = data.expressions[expression] 
               }
          }
-         const age = 'age: ' + Math.ceil(data.response.age) + ' years' 
-         const gender = 'gender: '+ data.response.gender
-         const heightRes= data.response.detection._box._height;
-         const widthRes= data.response.detection._box._width;
-         const marginLeft = data.response.detection._box._x;
-         const marginTop=data.response.detection._box._y+10;
+         const age = 'age: ' + Math.ceil(data.age) + ' years' 
+         const gender = 'gender: '+ data.gender
+         const heightRes= data.detection._box._height;
+         const widthRes= data.detection._box._width;
+         const marginLeft = data.detection._box._x;
+         const marginTop=data.detection._box._y+10;
          const box= {heightRes,widthRes,marginLeft,marginTop};
          return {
            type: DETECTED,

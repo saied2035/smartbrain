@@ -9,17 +9,16 @@ import {
 
 const sendEmailState = {
 	isSendPending : false,
-    sendSuccess : '',
 	sendFailed: ''
 }
 export const emailVerification = (state=sendEmailState,action={}) => {
 	switch (action.type){
 		case SENDING_EMAIL_PENDING :
-			return Object.assign({},state, {sendSuccess:'',isSendPending:action.payload,sendFailed:''});
+			return Object.assign({},state, {isSendPending:action.payload,sendFailed:''});
 		case SENDING_EMAIL_SUCCESS :	
-			return Object.assign({},state, {sendSuccess:'success',isSendPending:false,sendFailed:''});
+			return Object.assign({},state, {isSendPending:false,sendFailed:''});
 		case SENDING_EMAIL_FAILED :
-			return Object.assign({},state, {sendSuccess:'',isSendPending:false,sendFailed:action.payload});
+			return Object.assign({},state, {isSendPending:false,sendFailed:action.payload});
 		default :
 			return sendEmailState;		
 	}
@@ -27,18 +26,17 @@ export const emailVerification = (state=sendEmailState,action={}) => {
 
 const verifyEmailState = {
 	isVerifyPending : false,
-    verifySuccess : '',
 	verifyFailed: ''
 }
 
 export const codeVerification = (state=verifyEmailState,action={}) => {
 	switch (action.type){
 		case VERIFIY_EMAIL_PENDING :
-			return Object.assign({},state, {isVerifyPending:action.payload,verifySuccess:'',verifyFailed:''});
+			return Object.assign({},state, {isVerifyPending:action.payload,verifyFailed:''});
 		case VERIFIY_EMAIL_SUCCESS :	
-			return Object.assign({},state, {isVerifyPending:false,verifySuccess:'success',verifyFailed:''});
+			return Object.assign({},state, {isVerifyPending:false,verifyFailed:''});
 		case VERIFIY_EMAIL_FAILED :
-			return Object.assign({},state, {isVerifyPending:false,verifySuccess:'',verifyFailed:action.payload});
+			return Object.assign({},state, {isVerifyPending:false,verifyFailed:action.payload});
 		default :
 			return verifyEmailState;		
 	}

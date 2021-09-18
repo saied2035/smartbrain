@@ -3,15 +3,17 @@ import Logo from '../Logo/Logo';
 import ImageLinkForm from '../ImageLinkForm/ImageLinkForm';
 import FaceRecognition from '../FaceRecognition/FaceRecognition';
  const Home =
- ({user,response,onSearchChange,onButtonClick,error,onLoadImage,imageDims,box,chooseImage,imageName,imageDirection,feeling,age,gender})=> 
+ ({remove,onInputClick,user,response,onSearchChange,onButtonClick,error,onLoadImage,box,chooseImage,imageName,imagePath,feeling,age,gender})=> 
 {
 	  	return (
 	  		  <div>
               <Logo />
-              <ImageLinkForm error={error} imageDirection={imageDirection} onButtonClick={onButtonClick}
-               onSearchChange={onSearchChange} chooseImage={chooseImage} imageName={imageName}/>
-              <FaceRecognition imageDirection={imageDirection} response={response} 
-                onLoadImage={onLoadImage} imageDims={imageDims} box={box} 
+              <ImageLinkForm onInputClick= {onInputClick} remove={remove} error={error} imagePath={imagePath} 
+               onButtonClick={onButtonClick} onSearchChange={onSearchChange} chooseImage={chooseImage} 
+               imageName={imageName}/>
+
+              <FaceRecognition imagePath={imagePath} response={response} 
+                onLoadImage={onLoadImage} box={box} 
                 feeling={feeling} age={age} gender={gender} />
               
               </div>

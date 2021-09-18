@@ -25,7 +25,9 @@ export const sendEmail = (email) => (request) => {
                  request({type:SENDING_EMAIL_FAILED,payload:result})
               }  
             })
-             .catch(error => request({type:SENDING_EMAIL_FAILED,payload: 'error sending request'}))
+             .catch(error => {
+                request({type:SENDING_EMAIL_FAILED,payload: 'error sending request'})
+            })
          
  }
 
@@ -41,6 +43,7 @@ export const verifyEmail = (code) => (request) => {
              .then(response => response.json())
              .then(result => {
                 if(result.email) {
+                 window.localStorage.setItem("user",JSON.stringify(result))   
                  request({type:VERIFIY_EMAIL_SUCCESS,payload:result})
                 }
                 else {

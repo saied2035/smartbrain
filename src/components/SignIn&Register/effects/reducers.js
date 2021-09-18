@@ -4,7 +4,7 @@ import {
     SIGN_IN_EMAIL,
     SIGN_IN_PASSWORD,
     SIGN_IN_DEFAULT,
-    SIGN_IN_REMOVE_ERROR_MSG,
+    REMOVE_ERROR_MSG,
     REGISTER_EMAIL,
     REGISTER_PASSWORD,
     REGISTER_NAME,
@@ -63,7 +63,7 @@ export const getRemoveState = (state=initialErrorRemoveState,action={}) => {
 			return Object.assign({},state, {remove: false});		    
 		case REQUEST_FAILED :
 			return Object.assign({},state, {remove: false});
-		case SIGN_IN_REMOVE_ERROR_MSG :
+		case REMOVE_ERROR_MSG :
 			return Object.assign({},state, {remove : true});
 		default :
 			return state;		
@@ -71,17 +71,14 @@ export const getRemoveState = (state=initialErrorRemoveState,action={}) => {
 }
 
 const initialRouteState = {
-      route :  'signIn',
-      verfied : true,
+      route :  'signIn'
 
 }
 export const getRoute = (state=initialRouteState,action={}) => {
-	console.log(action.type)
 	switch (action.type){
 		case VERIFIY_EMAIL_SUCCESS :
-		    return Object.assign({},state, {verfied:true});
 		case REQUEST_SUCCESS :
-			return Object.assign({},state, {route:'home',verfied:action.payload.verified});		
+			return Object.assign({},state, {route:'home'});		
 		case SIGN_IN :	
 			return Object.assign({},state, {route:action.payload});
 		case REGISTER :
@@ -93,7 +90,6 @@ export const getRoute = (state=initialRouteState,action={}) => {
 
 const initialRequestState = {
 	isPending : false,
-	success: '',
 	failed: '',
 	user: {}
 }
@@ -103,8 +99,7 @@ export const compareUserResults = (state=initialRequestState,action={}) => {
 	switch (action.type){
 		case REQUEST_PENDING :
 			return Object.assign({},state, {user:{},isPending:action.payload,success:'',failed:''});
-		case VERIFIY_EMAIL_SUCCESS :
-		    return Object.assign({},state, {user:action.payload,isPending:false,success:'success',failed:''}); 	
+		case VERIFIY_EMAIL_SUCCESS : 	
 		case REQUEST_SUCCESS :	
 			return Object.assign({},state, {user:action.payload,isPending:false,success:'success',failed:''});
 		case REQUEST_FAILED :

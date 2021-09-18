@@ -1,10 +1,11 @@
 import React from 'react';
 
- const Nav = ({onSearchChange,onRouteChange,onRegisterSubmit,onSignInSubmit,getUserInformation,route}) => {
- 	if(route==='home' || route==='emailValidation' ){
+ const Nav = ({onSearchChange,user,onRouteChange,onRegisterSubmit,onSignInSubmit,getUserInformation,route}) => {
+ 	if(user!==null || route==='home'){
   return (
    <div className='flex justify-end'>
 	   <p onClick={() => {
+      window.localStorage.removeItem("user")
       onSignInSubmit('reset')
       onRegisterSubmit('reset')
       onRouteChange('signIn')

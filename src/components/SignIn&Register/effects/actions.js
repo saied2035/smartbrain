@@ -4,7 +4,7 @@ import {
     SIGN_IN_EMAIL,
     SIGN_IN_PASSWORD,
     SIGN_IN_DEFAULT,
-    SIGN_IN_REMOVE_ERROR_MSG,
+    REMOVE_ERROR_MSG,
     REGISTER_EMAIL,
     REGISTER_PASSWORD,
     REGISTER_NAME,
@@ -65,7 +65,7 @@ export const newUser = (target) => {
 
 export const removeErrorMsg = () => {
     return {
-        type: SIGN_IN_REMOVE_ERROR_MSG
+        type: REMOVE_ERROR_MSG
     }
 }
 export const setRoute = (text) => {
@@ -101,6 +101,7 @@ export const setRoute = (text) => {
                  request({type:REQUEST_FAILED,payload: data})
                 }
                 else {
+                  window.localStorage.setItem("user",JSON.stringify(data))  
                  request({type:REQUEST_SUCCESS,payload:data})
               }  
             })
@@ -122,6 +123,7 @@ export const setRoute = (text) => {
                 request({type:REQUEST_FAILED,payload:data})
                 }
               else {
+                window.localStorage.setItem("user",JSON.stringify(data))
                 request({type:REQUEST_SUCCESS,payload:data})
               }  
             })  

@@ -27,9 +27,8 @@ export const getSearch = (state=initialSearchState,action={}) => {
 
 const initialImageState = {
 	predict: {},
-	error: false,
-	isPending: false,
-	imageDims : ''
+	error: '',
+	isPending: false
 }
 
 export const getImage = (state=initialImageState,action={}) => {
@@ -41,21 +40,26 @@ export const getImage = (state=initialImageState,action={}) => {
 		    return initialImageState
 		case MULTIPALEINPUT :
 		case EMPTYINPUT :
-		    return Object.assign({},state, {error : action.payload ,imageDims:'',isPending:false,predict:{}});		         
+		    return Object.assign({},state, {error : action.payload,isPending:false,predict:{}});		         
 		case IMAGE_REQUEST_PENDING :
-			return Object.assign({},state,{isPending : action.payload ,imageDims:'',error:false,predict:{}});
+			return Object.assign({},state,{isPending : action.payload,error:false,predict:{}});
 		case IMAGE_REQUEST_SUCCESS :
 			return Object.assign({},state,
-				   {predict :action.payload,imageDims:action.imageDims,isPending:false,error:false});
+				   {predict :action.payload,isPending:false,error:''});
 		case IMAGE_REQUEST_FAILED :
-			return Object.assign({},state, {error : action.payload ,imageDims:'',isPending:false,predict:{}});  			   
+			return Object.assign({},state, {error : action.payload,isPending:false,predict:{}});  			   
 	    default :
 		    return state;
 	}
 }  
 
 const initialBoxState = {
-	box: {},
+	box: {
+		widthRes: '',
+		heightRes:'',
+		marginLeft:'',
+		marginTop:''
+	},
 	feeling:'',
     age:'',
     gender: ''

@@ -2,12 +2,13 @@ import React from 'react';
 import './css/ImageLinkForm.css'
 import resetImage from './resetImage.png'
 import resetImageUrl from './resetImageUrl.png'
- const ImageLinkForm = ({onSearchChange,onButtonClick,error,imageDirection,chooseImage,imageName}) => {
+ const ImageLinkForm = ({onInputClick,remove,onSearchChange,onButtonClick,error,imagePath,chooseImage,imageName}) => {
 
 		return (
 			   <div>
 			   <div className="flex justify-center items-center">
-			      <div className="flex justify-center items-center pa1 ma0 mt3 ml2 shadow-5 background-image ba b--light-green"
+			      <div className="flex justify-center items-center pa1 ma0 mt3 ml2 shadow-5 background-image 
+			                      ba b--light-green"
 			           style={{marginBlock:0}}>
 				      <input onChange={(event) => chooseImage(event) } className="dn" type="file"/>
 				      <div>
@@ -15,8 +16,9 @@ import resetImageUrl from './resetImageUrl.png'
 				      <input onClick={() => {
 				      	             const text = document.querySelectorAll("input")[0]
 				      	              text.click()
-				                   }} type="button" className="br2 pa1 fw6 f4 v-mid tc pointer" 
-				                   style={{marginBlock:'0.5rem'}} value={imageName} />
+				                   }} type="button" className="mw4 br2 pa1 fw6 f4 v-mid tc pointer" 
+				            style={{marginBlock:'0.5rem'}} value={imageName} 
+				            {...(error.length? {onMouseEnter:() => onInputClick}: {})}/>
 
 				       <img alt='' className="absolute ma1 pointer" src={resetImage} 
 				            onClick={(event) => {
@@ -32,6 +34,7 @@ import resetImageUrl from './resetImageUrl.png'
                        <div className='di'>
                       <input onChange={onSearchChange} id='urlimageinput' className='br3 fw6 v-mid ma1 pa2 bg-white' 
 					   type='text' placeholder='Enter image URL (jpg,jpeg or png)'
+					   {...(error.length? {onMouseEnter:() => onInputClick}: {})}
 					   style={{width:'25vw'}}/>
 
                        <img alt='' className="absolute pointer" src={resetImageUrl}
@@ -48,7 +51,7 @@ import resetImageUrl from './resetImageUrl.png'
 				      </div>
 					  <input onClick={() => {
 					  	 const urlImage = document.querySelectorAll('input')[2]
-                         const deviceImage = imageDirection.replace(/^data:image\/(jpeg|jpg|png);base64,/i, "")
+                         const deviceImage = imagePath.replace(/^data:image\/(jpeg|jpg|png);base64,/i, "")
                          deviceImage.length && urlImage.value ? 
                            onButtonClick("multipaleInput")
                          :  
@@ -57,13 +60,15 @@ import resetImageUrl from './resetImageUrl.png'
 					  className='fw6 v-mid pa1 dark-red ma0 ml2 bg-white pointer f3 grow' value="Detect" /> 			   	
 			   </div>
 			            {
-                          error.length ?
+
+                          !remove ?
                           <div className='flex justify-center'>
                            <p className='ma0 f5 b dark-red georgia shadow-5 pa2 ph3'>{error}</p>
                           </div>
                           :
                           <p className='dn'></p>
                         } 
+                        {console.log(remove,error)}
                </div>
 
   	    )
