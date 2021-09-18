@@ -18,7 +18,7 @@ import resetImageUrl from './resetImageUrl.png'
 				      	              text.click()
 				                   }} type="button" className="mw4 br2 pa1 fw6 f4 v-mid tc pointer" 
 				            style={{marginBlock:'0.5rem'}} value={imageName} 
-				            {...(error.length? {onMouseEnter:() => onInputClick}: {})}/>
+				            {...(error.length? {onMouseEnter:() => error=''}: {})}/>
 
 				       <img alt='' className="absolute ma1 pointer" src={resetImage} 
 				            onClick={(event) => {
@@ -34,7 +34,7 @@ import resetImageUrl from './resetImageUrl.png'
                        <div className='di'>
                       <input onChange={onSearchChange} id='urlimageinput' className='br3 fw6 v-mid ma1 pa2 bg-white' 
 					   type='text' placeholder='Enter image URL (jpg,jpeg or png)'
-					   {...(error.length? {onMouseEnter:() => onInputClick}: {})}
+					   {...(error.length? {onMouseEnter:() => error=''}: {})}
 					   style={{width:'25vw'}}/>
 
                        <img alt='' className="absolute pointer" src={resetImageUrl}
