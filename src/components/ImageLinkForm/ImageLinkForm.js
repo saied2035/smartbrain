@@ -61,14 +61,14 @@ import resetImageUrl from './resetImageUrl.png'
 			   </div>
 			            {
 
-                          !remove ?
+                          error.length ?
                           <div className='flex justify-center'>
                            <p className='ma0 f5 b dark-red georgia shadow-5 pa2 ph3'>{error}</p>
                           </div>
                           :
                           <p className='dn'></p>
                         } 
-                        {console.log(remove,error)}
+                        
                </div>
 
   	    )
