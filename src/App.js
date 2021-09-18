@@ -50,8 +50,8 @@ class App extends  Component {
          :
          user.verified ?          
           <Home user={user} error={error} onButtonClick={onButtonClick} onSearchChange={onSearchChange}
-                onLoadImage={onLoadImage} remove = {remove} onInputClick= {onInputClick} box={box} 
-                feeling={feeling} age={age} gender={gender} chooseImage={chooseImage} response={response} 
+                onLoadImage={onLoadImage} box={box} feeling={feeling} 
+                age={age} gender={gender} chooseImage={chooseImage} response={response} 
                 imagePath={imagePath} imageName={imageName} />
          :
           <div>
