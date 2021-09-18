@@ -2,7 +2,7 @@ import React from 'react';
 import './css/ImageLinkForm.css'
 import resetImage from './resetImage.png'
 import resetImageUrl from './resetImageUrl.png'
- const ImageLinkForm = ({onSearchChange,onButtonClick,error,imagePath,chooseImage,imageName}) => {
+ const ImageLinkForm = ({onInputClick,remove,onSearchChange,onButtonClick,error,imagePath,chooseImage,imageName}) => {
 
 		return (
 			   <div>
@@ -18,7 +18,7 @@ import resetImageUrl from './resetImageUrl.png'
 				      	              text.click()
 				                   }} type="button" className="mw4 br2 pa1 fw6 f4 v-mid tc pointer" 
 				            style={{marginBlock:'0.5rem'}} value={imageName} 
-				            {...(error.length? {onMouseEnter:() => error=''}: {})}/>
+				            {...(error.length? {onMouseEnter:() => onInputClick()}: {})}/>
 
 				       <img alt='' className="absolute ma1 pointer" src={resetImage} 
 				            onClick={(event) => {
@@ -34,7 +34,7 @@ import resetImageUrl from './resetImageUrl.png'
                        <div className='di'>
                       <input onChange={onSearchChange} id='urlimageinput' className='br3 fw6 v-mid ma1 pa2 bg-white' 
 					   type='text' placeholder='Enter image URL (jpg,jpeg or png)'
-					   {...(error.length? {onMouseEnter:() => error=''}: {})}
+					   {...(error.length? {onMouseEnter:() => onInputClick()}: {})}
 					   style={{width:'25vw'}}/>
 
                        <img alt='' className="absolute pointer" src={resetImageUrl}
@@ -61,14 +61,14 @@ import resetImageUrl from './resetImageUrl.png'
 			   </div>
 			            {
 
-                          error.length ?
+                          !remove ?
                           <div className='flex justify-center'>
                            <p className='ma0 f5 b dark-red georgia shadow-5 pa2 ph3'>{error}</p>
                           </div>
                           :
                           <p className='dn'></p>
                         } 
-                        
+                        {console.log(remove,error)}
                </div>
 
   	    )
