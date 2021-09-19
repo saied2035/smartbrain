@@ -9,7 +9,10 @@ import './css/FaceRecognition.css'
               <img  onLoad={() => onLoadImage(response)} id='inputImage'className='mt2' alt='' 
                {...(response.detection ?
                  {src: imagePath || urlImage.value } : {})} 
-                 {...(!response.detection? {className:"dn"} : {})} style={{width:'30vw',height:'auto'}} />
+                 {...(!response.detection? {className:"dn"} : {})} 
+                 {...(window.innerWidth <=411? {style:{width:0.3*411,height:'auto'}} 
+                  : 
+                  {style:{width:'30vw',height:'auto'}})} />
 
                 <div className="pointer absolute" style={{width:box.widthRes,height:box.heightRes
                     ,marginLeft:box.marginLeft ,marginTop:box.marginTop
