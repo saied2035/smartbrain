@@ -39,7 +39,7 @@ export const getImageUrl = (text,imageWidth) => (request) => {
 
           else{
             if(imageWidth<=411){
-              imageWidth = 411
+              imageWidth = 1370
             }
              console.log(imageWidth)
             request({type :IMAGE_REQUEST_PENDING, payload: true})
