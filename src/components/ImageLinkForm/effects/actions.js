@@ -29,6 +29,7 @@ export const getSearchBar = (target) =>  {
 // getImage and detect the face using Clarifai Api
 
 export const getImageUrl = (text,imageWidth) => (request) => {
+          console.log(imageWidth)
           if(text==="multipaleInput"){
             request({type :MULTIPALEINPUT, payload: `you can't use the two methods at the same time`})
           }
@@ -37,6 +38,10 @@ export const getImageUrl = (text,imageWidth) => (request) => {
           }  
 
           else{
+            if(imageWidth<=411){
+              imageWidth = 411
+            }
+             console.log(imageWidths)
             request({type :IMAGE_REQUEST_PENDING, payload: true})
                 fetch('https://smart-brain-api-nile.herokuapp.com/predict', {
                   method: 'post',
