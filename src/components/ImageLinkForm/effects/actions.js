@@ -41,7 +41,7 @@ export const getImageUrl = (text,imageWidth) => (request) => {
             if(imageWidth<=411){
               imageWidth = 411
             }
-             console.log(imageWidths)
+             console.log(imageWidth)
             request({type :IMAGE_REQUEST_PENDING, payload: true})
                 fetch('https://smart-brain-api-nile.herokuapp.com/predict', {
                   method: 'post',
