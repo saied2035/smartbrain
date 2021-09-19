@@ -6,26 +6,26 @@ import './css/Register.css'
       const {onRouteChange,onRegisterSubmit,onInsertUser,name,email,password
              ,onInputClick,failed,remove} = this.props
     return (
-          <div className="center background shadow-5" style={{width:'34vw'}} >
+          <div className="center background shadow-5 mw7" style={{width:'34vw'}} >
               <div className="mt3">
                 <fieldset id="sign_up" className="center ba b--transparent ph0 mh0">
                   <legend className="f1 fw6 ph0 mh0 tc b">Register</legend>
                       <div>
                         <div {...(failed.length? {className:"mt0"}: {className:"mt1"})}>
                           <label className="db fw6 lh-copy f4" htmlFor="Username">Username</label>
-                          <input className="b pa2 ba" onChange={onRegisterSubmit}
+                          <input className="b pa2 ba w-100" onChange={onRegisterSubmit}
                           {...(failed.length? {onMouseEnter:onInputClick}: {})} 
                           type="text" name="username"  id="name" />
                         </div>
                         <div {...(failed.length? {className:"mt0"}: {className:"mt1"})}>
                           <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
-                          <input className="b pa2 ba" onChange={onRegisterSubmit}
+                          <input className="b pa2 ba w-100" onChange={onRegisterSubmit}
                           {...(failed.length? {onMouseEnter:onInputClick}: {})} 
                           type="email" name="email"  id="email" />
                         </div>
                         <div {...(failed.length? {className:"mt0"}: {className:"mt1"})}>
                           <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
-                          <input className="b pa2 ba" onChange={onRegisterSubmit}
+                          <input className="b pa2 ba w-100" onChange={onRegisterSubmit}
                           {...(failed.length? {onMouseEnter:onInputClick}: {})}
                           type="password" name="password"  id="password" />
                         </div>

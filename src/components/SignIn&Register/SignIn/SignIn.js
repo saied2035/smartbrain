@@ -4,20 +4,20 @@ import './css/SignIn.css'
     render () {
       const {onInputClick,onSignInSubmit,onRouteChange,email,password,onInsertUser,failed,remove} = this.props
     return (
-          <div className="center background shadow-5" style={{width:'34vw'}} >
+          <div className="center background shadow-5 mw7" style={{width:'34vw'}} >
               <div className="mt3">
                 <fieldset id="sign_in" className="center ba b--transparent ph0 mh0">
                   <legend className="f1 fw6 ph0 mh0 tc b">Sign In</legend>  
                       <div>         
                           <div {...(failed.length? {className:"mt0"}: {className:"mt1"})}>
                           <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
-                          <input className="b pa2 ba" onChange={onSignInSubmit} 
+                          <input className="b pa2 ba w-100" onChange={onSignInSubmit} 
                            {...(failed.length? {onMouseEnter:onInputClick}: {})} 
                           type="email" name="email-address"  id="email-address" />
                           </div>
                           <div {...(failed.length? {className:"mt0"}: {className:"mt1"})}>
                           <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
-                          <input className="b pa2 ba" onChange={onSignInSubmit} 
+                          <input className="b pa2 ba w-100" onChange={onSignInSubmit} 
                           {...(failed.length? {onMouseEnter:onInputClick}: {})} 
                           type="password" name="password"  id="password" />
                           </div>
