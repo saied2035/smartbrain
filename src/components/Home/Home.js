@@ -4,7 +4,7 @@ import ImageLinkForm from '../ImageLinkForm/ImageLinkForm';
 import FaceRecognition from '../FaceRecognition/FaceRecognition';
  const Home =(props)=> 
 {
-      const {user,response,onSearchChange,onButtonClick,error,onLoadImage,box,chooseImage} = props
+      const {response,onSearchChange,onButtonClick,error,onLoadImage,box,chooseImage} = props
       const {imageName,imagePath,feeling,age,gender} = props
 	  	return (
 	  		  <div>
