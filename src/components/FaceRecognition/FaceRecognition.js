@@ -10,7 +10,7 @@ import './css/FaceRecognition.css'
                {...(response.detection ?
                  {src: imagePath || urlImage.value } : {})} 
                  {...(!response.detection? {className:"dn"} : {})} 
-                 {...(window.innerWidth <=411? {style:{width:411,height:'auto'}} 
+                 {...(window.innerWidth <=411? {style:{width:window.innerWidth,height:'auto'}} 
                   : 
                   {style:{width:'30vw',height:'auto'}})} />
 
