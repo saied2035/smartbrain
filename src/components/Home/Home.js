@@ -2,9 +2,10 @@ import React from 'react';
 import Logo from '../Logo/Logo';
 import ImageLinkForm from '../ImageLinkForm/ImageLinkForm';
 import FaceRecognition from '../FaceRecognition/FaceRecognition';
- const Home =
- ({user,response,onSearchChange,onButtonClick,error,onLoadImage,box,chooseImage,imageName,imagePath,feeling,age,gender})=> 
+ const Home =(props)=> 
 {
+      const {user,response,onSearchChange,onButtonClick,error,onLoadImage,box,chooseImage} = this.props
+      const {imageName,imagePath,feeling,age,gender} = this.props
 	  	return (
 	  		  <div>
               <Logo />
