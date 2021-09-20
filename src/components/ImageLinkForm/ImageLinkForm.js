@@ -10,7 +10,8 @@ import resetImageUrl from './resetImageUrl.png'
 			      <div className="flex justify-center items-center pa1 ma0 mt3 ml2 shadow-5 background-image 
 			                      ba b--light-green"
 			           style={{marginBlock:0}}>
-				      <input onChange={(event) => chooseImage(event) } className="dn" type="file"/>
+				      <input onChange={(event) => chooseImage(event) } className="dn" type="file" 
+				       accept="image/*"/>
 				      <div>
 				      
 				      <input onClick={() => {
