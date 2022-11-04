@@ -37,18 +37,14 @@ export const getImageUrl = (text,imageWidth) => (request) => {
             request({type :EMPTYINPUT, payload: `you didn't give any input to detect`})
           }  
 
-          else{
-            if(imageWidth<=600){
-              imageWidth = (imageWidth*0.8*10)/3
-            }
-             console.log(imageWidth)
+          else {
+            console.log(imageWidth)
             request({type :IMAGE_REQUEST_PENDING, payload: true})
                 fetch('https://smart-brain-api-nile.herokuapp.com/predict', {
                   method: 'post',
                   headers: {'content-type':'application/json'},
                   body: JSON.stringify({
                       text:text,
-                      imageWidth: imageWidth
                   })
                })
               .then(response => response.json())
@@ -62,6 +58,7 @@ export const getImageUrl = (text,imageWidth) => (request) => {
                          )                  
                 }
                 else{
+                  console.log("response", response)
                         request(
                            
                            {
@@ -94,12 +91,13 @@ export const getBox = (data) => {
                  max = data.expressions[expression] 
               }
          }
-         const age = 'age: ' + Math.ceil(data.age) + ' years' 
+         console.log(data)
+         const age = 'age: ' + data.age %  1 > 0.5 ? parseInt(data.age) + 1 : parseInt(data.age) + ' years' 
          const gender = 'gender: '+ data.gender
-         const heightRes= data.detection._box._height;
-         const widthRes= data.detection._box._width;
-         const marginLeft = data.detection._box._x;
-         const marginTop=data.detection._box._y+10;
+         const heightRes = (data.detection._box._height / data.detection._imageDims._height) * 100;
+         const widthRes = (data.detection._box._width / data.detection._imageDims._width) * 100;
+         const marginLeft = (data.detection._box._x / data.detection._imageDims._width) * 100;
+         const marginTop= (data.detection._box._y / data.detection._imageDims._height) * 100;
          const box= {heightRes,widthRes,marginLeft,marginTop};
          return {
            type: DETECTED,

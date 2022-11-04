@@ -6,8 +6,8 @@ import resetImageUrl from './resetImageUrl.png'
 
 		return (
 			   <div>
-			   <div className="flex justify-center items-center">
-			      <div className="flex justify-center items-center pa1 ma0 mt3 ml2 shadow-5 background-image 
+			   <div className="flex flex-row-ns flex-column justify-center w-100-ns items-center" style={{ gap:'1rem 0' }}>
+			      <div className="flex justify-center items-center pa1 ma0 mt3 shadow-5 background-image 
 			                      ba b--light-green"
 			           style={{marginBlock:0}}>
 				      <input onChange={(event) => chooseImage(event) } className="dn" type="file" 
@@ -34,7 +34,7 @@ import resetImageUrl from './resetImageUrl.png'
                        <div className='di'>
                       <input onChange={onSearchChange} id='urlimageinput' className='br3 fw6 v-mid ma1 pa2 bg-white' 
 					   type='text' placeholder='Enter image URL (jpg,jpeg or png)'
-					   style={{width:'25vw'}}/>
+					   style={{width:'96%'}}/>
 
                        <img alt='' className="absolute pointer" src={resetImageUrl}
                              style= {{marginLeft:'-1rem'}} 

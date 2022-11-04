@@ -5,21 +5,19 @@ import './css/FaceRecognition.css'
     const urlImage = document.querySelector('#urlimageinput')
     return (
       <div className="flex justify-center ">
-          <div className="flex">
-              <img  onLoad={() => onLoadImage(response)} id='inputImage'className='mt2' alt='' 
+          <div className="flex relative w-30-ns w-70-m w-90 mt2">
+              <img  onLoad={() => onLoadImage(response)} id='inputImage' alt='' 
                {...(response.detection ?
                  {src: imagePath || urlImage.value } : {})} 
                  {...(!response.detection? {className:"dn"} : {})} 
-                 {...(window.innerWidth <=600? {style:{width:window.innerWidth*0.8,height:'auto'}} 
-                  : 
-                  {style:{width:'30vw',height:'auto'}})} />
+                 style={{ minWidth: '100%' }}/>
 
-                <div className="pointer absolute" style={{width:box.widthRes,height:box.heightRes
-                    ,marginLeft:box.marginLeft ,marginTop:box.marginTop
+                <div className="pointer absolute" style={{width: `${box.widthRes}%`,height: `${box.heightRes}%`
+                    ,left: `${box.marginLeft}%` ,top: `${box.marginTop}%`
                     ,boxShadow: '0 0 0 3px cyan inset'}}>
                 </div>
                   <div className="flex justify-center absolute" 
-                  style={{width:'30vw',marginTop:box.marginTop+box.heightRes}}>
+                  style={{ top:`${box.marginTop+box.heightRes}%`, left: `${box.marginLeft}%`}}>
                     <div id="result" className="mt1 bg-white f5 fw6">
                         <span>{feeling}</span>
                         <span className="db">{age}</span>
