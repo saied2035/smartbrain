@@ -50,7 +50,7 @@ import resetImageUrl from './resetImageUrl.png'
 				      </div>
 					  <input onClick={() => {
 					  	 const urlImage = document.querySelectorAll('input')[2]
-                         const deviceImage = imagePath.replace(/^data:image\/(jpeg|jpg|png);base64,/i, "")
+                         const deviceImage = imagePath.replace(/^data:image\/(jpeg|jpg|png|bmp|gif|tiff);base64,/i, "")
                          deviceImage.length && urlImage.value ? 
                            onButtonClick("multipaleInput")
                          :  
