@@ -28,8 +28,7 @@ export const getSearchBar = (target) =>  {
 
 // getImage and detect the face using Clarifai Api
 
-export const getImageUrl = (text,imageWidth) => (request) => {
-          console.log(imageWidth)
+export const getImageUrl = (text) => (request) => {
           if(text==="multipaleInput"){
             request({type :MULTIPALEINPUT, payload: `you can't use the two methods at the same time`})
           }
@@ -38,7 +37,6 @@ export const getImageUrl = (text,imageWidth) => (request) => {
           }  
 
           else {
-            console.log(imageWidth)
             request({type :IMAGE_REQUEST_PENDING, payload: true})
                 fetch('https://smart-brain-api-nile.herokuapp.com/predict', {
                   method: 'post',
@@ -49,7 +47,15 @@ export const getImageUrl = (text,imageWidth) => (request) => {
                })
               .then(response => response.json())
               .then(response =>{
-                if(!response.detection){
+                if(response.error) {
+                  request(
+                                {
+                                  type :IMAGE_REQUEST_FAILED,
+                                  payload: response.error
+                                }
+                            )
+                }
+                else if(!response.detection){
                   request(
                            {
                              type: IMAGE_REQUEST_FAILED,
@@ -58,7 +64,6 @@ export const getImageUrl = (text,imageWidth) => (request) => {
                          )                  
                 }
                 else{
-                  console.log("response", response)
                         request(
                            
                            {
@@ -91,7 +96,6 @@ export const getBox = (data) => {
                  max = data.expressions[expression] 
               }
          }
-         console.log(data)
          const age = 'age: ' + data.age %  1 > 0.5 ? parseInt(data.age) + 1 : parseInt(data.age) + ' years' 
          const gender = 'gender: '+ data.gender
          const heightRes = (data.detection._box._height / data.detection._imageDims._height) * 100;
