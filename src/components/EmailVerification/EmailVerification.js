@@ -8,6 +8,9 @@ import React,{ useEffect} from 'react';
 			     <div className="flex justify-center" style={{marginBlockStart:'5.5rem'}}>
 			         <div className="shadow-5 pa2 black-80 "> 
                         <p className="f3 ph0 mh0 tc b black-80">Email validation</p>
+                        <small>
+                          If you can't find the email in your inbox, please check your spam folder
+                        </small>
                         <p className="f3 fw4 ph0 mh0 tc">
                            There is a code sent to <span className="f4 b dark-blue">{email}</span> 
                         </p>
