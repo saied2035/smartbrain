@@ -8,7 +8,7 @@ import React,{ useEffect} from 'react';
 			     <div className="flex justify-center" style={{marginBlockStart:'5.5rem'}}>
 			         <div className="shadow-5 pa2 black-80 "> 
                         <p className="f3 ph0 mh0 tc b black-80">Email validation</p>
-                        <small className="f4 black-80 light-blue">
+                        <small className="black-80 center b">
                           If you can't find the email in your inbox, please check your spam folder
                         </small>
                         <p className="f3 fw4 ph0 mh0 tc">
