@@ -7,12 +7,15 @@
 - HTML
 - CSS
 - JSX & React & Redux
+- NodeJS
+- PostgreSQL
 
 ## Live Demo
 
-- [Live Demo](saied2035.github.io/smartbrain/)
+- [Live Demo](https://saied2035.github.io/smartbrain/)
 
 ## back-end Repository
+
 - [smartbrain API](https://github.com/saied2035/smart-brain-api)
 
 ## Getting Started

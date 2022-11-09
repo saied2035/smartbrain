@@ -38,7 +38,7 @@ export const getImageUrl = (text) => (request) => {
 
           else {
             request({type :IMAGE_REQUEST_PENDING, payload: true})
-                fetch('https://smart-brain-api-nile.herokuapp.com/predict', {
+                fetch('https://fabulous-zephyr-production.up.railway.app/predict', {
                   method: 'post',
                   headers: {'content-type':'application/json'},
                   body: JSON.stringify({

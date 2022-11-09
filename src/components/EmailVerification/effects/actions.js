@@ -9,7 +9,7 @@ import {
 
 export const sendEmail = (email) => (request) => {
               request({type: SENDING_EMAIL_PENDING,payload: true})
-              fetch('https://smart-brain-api-nile.herokuapp.com/send', {
+              fetch('https://fabulous-zephyr-production.up.railway.app/send', {
                 method: 'post',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({
@@ -33,7 +33,7 @@ export const sendEmail = (email) => (request) => {
 
 export const verifyEmail = (code) => (request) => {
               request({type: VERIFIY_EMAIL_PENDING,payload: true})
-              fetch('https://smart-brain-api-nile.herokuapp.com/verify', {
+              fetch('https://fabulous-zephyr-production.up.railway.app/verify', {
                 method: 'delete',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({
