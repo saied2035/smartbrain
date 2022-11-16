@@ -6,8 +6,7 @@ import './css/Register.css'
       const {onRouteChange,onRegisterSubmit,onInsertUser,name,email,password
              ,onInputClick,failed,remove} = this.props
     return (
-          <div className="center background shadow-5 mw7" 
-          {...(window.innerWidth<=600? {style:{width:'80vw'}}:{style:{width:'34vw'}})} >
+          <div className="center background shadow-5 w-33-ns w-60-m w-90">
               <div className="mt3">
                 <fieldset id="sign_up" className="center ba b--transparent ph0 mh0">
                   <legend className="f1 fw6 ph0 mh0 tc b">Register</legend>
