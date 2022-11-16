@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/smartbrain/static/css/main.7af5f1f7.css",
-    "main.js": "/smartbrain/static/js/main.c3d87074.js",
+    "main.js": "/smartbrain/static/js/main.55164bb0.js",
     "static/media/VampireBite-qZK3d.woff": "/smartbrain/static/media/VampireBite-qZK3d.6fcfefa250dfe9c6d33e.woff",
     "static/media/VampireBiteSolid-AL0wD.woff": "/smartbrain/static/media/VampireBiteSolid-AL0wD.175f0a1dc499770ce482.woff",
     "index.html": "/smartbrain/index.html",
     "main.7af5f1f7.css.map": "/smartbrain/static/css/main.7af5f1f7.css.map",
-    "main.c3d87074.js.map": "/smartbrain/static/js/main.c3d87074.js.map"
+    "main.55164bb0.js.map": "/smartbrain/static/js/main.55164bb0.js.map"
   },
   "entrypoints": [
     "static/css/main.7af5f1f7.css",
-    "static/js/main.c3d87074.js"
+    "static/js/main.55164bb0.js"
   ]
 }
