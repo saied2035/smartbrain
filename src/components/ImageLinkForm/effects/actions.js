@@ -38,7 +38,7 @@ export const getImageUrl = (text) => (request) => {
 
           else {
             request({type :IMAGE_REQUEST_PENDING, payload: true})
-                fetch('https://fabulous-zephyr-production.up.railway.app/predict', {
+                fetch('http://localhost:3001/predict', {
                   method: 'post',
                   headers: {'content-type':'application/json'},
                   body: JSON.stringify({

@@ -7,7 +7,7 @@ import './css/Register.css'
              ,onInputClick,failed,remove} = this.props
     return (
           <div className="center background shadow-5 w-33-ns w-60-m w-90">
-              <div className="mt3">
+              <div>
                 <fieldset id="sign_up" className="center ba b--transparent ph0 mh0">
                   <legend className="f1 fw6 ph0 mh0 tc b">Register</legend>
                       <div>
@@ -41,9 +41,9 @@ import './css/Register.css'
                       remove?
                       (<p className='dn'>{failed}</p>)
                       :
-                      (<p className='ma0 f5 tc b dark-red georgia shadow-5 pa2 ph3'>{failed}</p>)
+                      (<p className='ma0 f7 tc center lh-copy b dark-red georgia'>{failed}</p>)
                     }
-                    <p className="tc f4 mt4 ma0" style={{marginBlockEnd:'0.5rem'}}>have an account?</p>
+                    <p className="tc f4 ma0" style={{marginBlockEnd:'0.5rem'}}>have an account?</p>
                     <input onClick={() => {
                           onRegisterSubmit('reset')
                           onRouteChange('signIn')
