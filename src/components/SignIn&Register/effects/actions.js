@@ -87,7 +87,7 @@ export const setRoute = (text) => {
   export const compareUser = (props) => (request) => {
               request({type: REQUEST_PENDING,payload: true})
                if(!Object.keys(props).includes("name")){
-              fetch('http://localhost:3001/signin', {
+              fetch('https://fabulous-zephyr-production.up.railway.app/signin', {
                 method: 'post',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({
@@ -108,7 +108,7 @@ export const setRoute = (text) => {
              .catch(error => request({type:REQUEST_FAILED,payload: 'error sending request'}))
          }
          else {
-              fetch('http://localhost:3001/register', {
+              fetch('https://fabulous-zephyr-production.up.railway.app/register', {
                 method: 'post',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({
