@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-- [Live Demo](https://saied2035.github.io/smartbrain/)
+- [Live Demo](https://smart-brain-me.netlify.app/)
 
 ## back-end Repository
 
