@@ -5,11 +5,11 @@ import {
     VERIFIY_EMAIL_PENDING,
     VERIFIY_EMAIL_SUCCESS,
     VERIFIY_EMAIL_FAILED
-} from './constants.js'  
+} from './constants.js'
 
 export const sendEmail = (email) => (request) => {
               request({type: SENDING_EMAIL_PENDING,payload: true})
-              fetch('https://fabulous-zephyr-production.up.railway.app/send', {
+              fetch(`${process.env.REACT_APP_BASE_URL}/send`, {
                 method: 'post',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({
@@ -33,7 +33,7 @@ export const sendEmail = (email) => (request) => {
 
 export const verifyEmail = (code) => (request) => {
               request({type: VERIFIY_EMAIL_PENDING,payload: true})
-              fetch('https://fabulous-zephyr-production.up.railway.app/verify', {
+              fetch(`${process.env.REACT_APP_BASE_URL}/verify`, {
                 method: 'delete',
                 headers: {'content-type':'application/json'},
                 body: JSON.stringify({
